@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+}
+
+/* Navigation Bar Styling */
+.home-nav {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99vw;
+    height: 5ch;
+}
+
+.current-page {
+    border-bottom: 2px solid white;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-button1 {
+    padding: 1ch 2ch;
+}
+
+.nav-button2 {
+    border: 1px solid yellow;
+    border-radius: 20ch;
+    padding: 0.5ch 2ch
+}
+
+.nav-logo {
+    font-size: 2rem;
+}
+
+/* Item Listing Page Styling */
+.items-page {
+    display: flex;
+}
+
+.filter-side-bar {
+    flex-grow: 0.5;
+    padding: 1ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.items {
+    flex-grow: 4;
+}
+
+.filter-title {
+    color: white;
+    margin: 0;
+}
+
+.side-bar-hr {
+    width: 80%;
+}
+.filter-labels {
+    padding: 1ch 0ch;
+    margin-left: 20%;
+    align-self: flex-start;
+    color: white;
+}
