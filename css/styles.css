@@ -121,13 +121,13 @@ body {
 .drink-description {
     color: white;
     margin: 0;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .drink-price {
     color: white;
     margin: 0;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .add-to-cart-button {
@@ -135,5 +135,67 @@ body {
     border-radius: 2ch;
     background-color: rgb(73, 73, 73);
     color: gray;
-    margin: 0 10%;
+    margin: 0 5%;
+}
+
+/* Item Detail Page Styling */
+
+.drink-info {
+    display: flex;
+    height: 50vh;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5vh
+}
+
+.image-section {
+    width: 30%;
+    background-color: rgb(43, 43, 43);
+    border-radius: 2ch;
+}
+
+.drink-data {
+    box-sizing: border-box;
+    width: 70%;
+    background-color: rgb(39, 39, 39);
+    border-radius: 2ch;
+    padding: 0 5% 0 5%
+}
+
+.name, .data, .rating, .price, .stock {
+    color: white;
+}
+
+.cart-button {
+    color: white;
+    background-color: rgb(170, 129, 129);
+    border: none;
+    border-radius: 1ch;
+    width: 30%;
+    height: 10%;
+}
+
+.detail-title {
+    color: white;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.item-details {
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.detail-column1 {
+    flex-grow: 1;
+}
+
+.detail-column2 {
+    flex-grow: 1;
+}
+
+.details {
+    margin-top: 4vh;
+    color: white;
 }
