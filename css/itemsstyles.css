@@ -1,0 +1,107 @@
+/* Item Listing Page Styling */
+.items-page {
+    display: flex;
+    margin: 0 10%;
+}
+
+.filter-side-bar {
+    flex-grow: 0.5;
+    padding: 1ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ?Temporary until put the image instead */
+    margin-top: 10vh;
+}
+
+.items {
+    flex-grow: 4;
+}
+
+.filter-title {
+    color: white;
+    margin: 0;
+}
+
+.side-bar-hr {
+    width: 80%;
+}
+
+.filter-button {
+    padding: 1ch 0ch;
+    margin-left: 20%;
+    align-self: flex-start;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+#search-bar {
+    background-image: url(../images/svg/search.svg);
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+    margin: 5vh 30%;
+    width: 40%;
+    height: 5vh;
+    background-color: black;
+    border: 2px solid gray;
+    border-radius: 20ch;
+}
+
+#search-bar::placeholder {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+#item-listing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 5vh;
+    box-sizing: border-box;
+    padding: 1ch;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(73, 73, 73);
+    border-radius: 3ch;
+    width: 75%;
+    height: 50vh;
+}
+
+.drink-image {
+    height: 65%;
+    width: 100%;
+}
+
+.drink-name {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.drink-description {
+    color: white;
+    margin: 0;
+    margin-left: 5%;
+}
+
+.drink-price {
+    color: white;
+    margin: 0;
+    margin-left: 5%;
+}
+
+.add-to-cart-button {
+    border: 6px solid black;
+    border-radius: 2ch;
+    background-color: rgb(73, 73, 73);
+    color: gray;
+    margin: 0 5%;
+}

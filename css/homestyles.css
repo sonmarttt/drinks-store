@@ -1,0 +1,25 @@
+/* Home Page Styling */
+
+.home-title {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+}
+
+.home-about-us {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.home-about-us-title {
+    font-size: 3rem;
+    margin-left: 2%;
+    color: white;
+    width: 50%;
+}
+
+.home-about-us-text {
+    color: white;
+    width: 50%;
+    text-align: center;
+}
