@@ -12,6 +12,7 @@
 }
 
 .home-about-us-title {
+    margin-top: 30vh;
     font-size: 3rem;
     margin-left: 2%;
     color: white;
@@ -22,4 +23,61 @@
     color: white;
     width: 50%;
     text-align: center;
+}
+
+.suggested-cocktails-title {
+    margin-top: 20vh;
+    margin-right: 15%;
+    font-size: 3rem;
+    color: white;
+    text-align: end;
+}
+
+.suggested-cocktails {
+    display: flex;
+    width: 70%;
+    margin-left: 15%;
+    gap: 5%;
+}
+
+.suggested-item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(66, 66, 66);
+    border-radius: 5ch 5ch 0ch 5ch;
+    height: 40vh;
+    flex-grow: 1;
+}
+
+.cocktail-image {
+    width: 100%;
+    height: 75%;
+}
+
+.cocktail-name {
+    color: white;
+    text-align: center;
+}
+
+.new-arrivals-title {
+    margin-top: 20vh;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.new-arrivals {
+    display: flex;
+    width: 70%;
+    margin-left: 15%;
+    gap: 5%;
+}
+
+.new-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(73, 73, 73);
+    border-radius: 5ch;
+    height: 40vh;
 }
