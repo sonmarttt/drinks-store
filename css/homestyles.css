@@ -4,6 +4,7 @@
     font-size: 5rem;
     color: white;
     text-align: center;
+    font-family: Fraunces;
 }
 
 .home-about-us {
@@ -57,6 +58,7 @@
 .cocktail-name {
     color: white;
     text-align: center;
+    font-family: old standard tt;
 }
 
 .new-arrivals-title {
@@ -80,4 +82,13 @@
     background-color: rgb(73, 73, 73);
     border-radius: 5ch;
     height: 40vh;
+}
+
+h1{
+    font-family: Old Standard TT;
+}
+
+.drink-name, .drink-description, .drink-price {
+    color: white;
+    font-family: old standard tt;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/loginstyles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -22,12 +23,6 @@
                     <a class="nav-link nav-button1"
                         href="shopping-cart.html">Shopping Cart</a>
                     <a class="nav-link nav-button1" href="faq.html">FAQ</a>
-                </div>
-                <div class="login-signup">
-                    <a class="nav-link nav-button2 current-page"
-                        href="login.html">Login</a>
-                    <a class="nav-link nav-button2" href="signup.html">Sign
-                        Up</a>
                 </div>
             </nav>
         </header>
@@ -52,7 +47,8 @@
                     <input type="password" id="password" name="password"
                         required class="login-input"><br><br>
                     <input type="checkbox" id="remember-me" name="remember-me"
-                        class="login-checkbox">Remember me<br><br>
+                        class="login-checkbox"> <label for="remember-me">Remember me</label>
+                    <br><br>
                     <button type="submit" class="login-button">Login</button>
                 </fieldset>
             </form>

@@ -4,16 +4,50 @@ body {
 
 /* Navigation Bar Styling */
 .home-nav {
-    display: inline-flex;
-    justify-content: space-between;
+    padding-top:4ch;
+    display: flex;
     align-items: center;
-    width: 99vw;
-    height: 5ch;
+    position: relative;
+    justify-content: flex-start;
+    font-size: large;
+}
+
+.login-signup {
+    position: absolute;
+    display: flex;
+    right: 1%;
+    justify-content: end;
+    gap: 1.5ch;
+}
+
+.main-links{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3ch;
+}
+
+.logo{
+    position: absolute;
+    display: flex;
+    left: 1%;
+    justify-content: start;
+
+}
+a {
+    font-family: Text-Me-One, sans-serif;
+
+}
+.nav-logo {
+    font-size: 2.4rem;
+    font-family: Faunces;
 }
 
 .current-page {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgb(243, 218, 193);
 }
+
 
 .nav-link {
     text-decoration: none;
@@ -21,15 +55,25 @@ body {
 }
 
 .nav-button1 {
-    padding: 1ch 2ch;
+    padding: 1ch ;
 }
 
 .nav-button2 {
-    border: 1px solid yellow;
+    border: 1px solid rgb(58,44,27);
     border-radius: 20ch;
     padding: 0.5ch 2ch
 }
 
-.nav-logo {
-    font-size: 2rem;
+a:hover {
+    color: rgb(124, 118, 109);
+    transition: 0.3s;
 }
+
+.footer-container{
+    padding: 2ch 0ch 0ch 0ch;
+    margin-top: 2ch ;
+    background-color: rgb(63, 51, 51);
+    width: 100%;
+    display: flex;
+}
+
