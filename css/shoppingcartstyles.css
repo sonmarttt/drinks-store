@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    width: 60%;
+    margin-left: 20%;
+    gap: 10%;
+}
+
+.cart {
+    flex-grow: 6;
+}
+
+.summary {
+    flex-grow: 4;
+}
+
+#summary-title {
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.cart-detail {
+    display: inline;
+    color: white;
+    margin: 0;
+}
+
+.price {
+    margin-right: 0;
+    display: inline;
+    color: white;
+    margin: 0;
+}
+
+span {
+    text-align: end;
+}
+
+hr {
+    color: rgb(117, 117, 45);
+}
+
+.radio-button {
+    margin-left: 5%;
+}
+
+.radio-button-label {
+    display: inline;
+}
