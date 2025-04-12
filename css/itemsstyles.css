@@ -5,7 +5,7 @@
 }
 
 .filter-side-bar {
-    width: 15%;
+    width: 20%;
     padding: 1ch;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
 }
 
 .items {
-    width: 85%;
+    width: 80%;
 }
 
 .filter-title {
@@ -36,6 +36,18 @@
     color: white;
     background-color: black;
     border: none;
+}
+
+#country-filter > label {
+    color: white;
+}
+
+#brand-filter > label {
+    color: white;
+}
+
+#type-filter > label {
+    color: white;
 }
 
 #search-bar {
