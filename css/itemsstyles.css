@@ -5,7 +5,7 @@
 }
 
 .filter-side-bar {
-    flex-grow: 0.5;
+    width: 15%;
     padding: 1ch;
     display: flex;
     flex-direction: column;
@@ -15,21 +15,23 @@
 }
 
 .items {
-    flex-grow: 4;
+    width: 85%;
 }
 
 .filter-title {
+    font-size: 2.5rem;
     color: white;
     margin: 0;
 }
 
 .side-bar-hr {
-    width: 80%;
+    width: 90%;
 }
 
 .filter-button {
+    font-size: 1rem;
     padding: 1ch 0ch;
-    margin-left: 20%;
+    margin-left: 10%;
     align-self: flex-start;
     color: white;
     background-color: black;
@@ -60,8 +62,6 @@
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     row-gap: 5vh;
-    box-sizing: border-box;
-    padding: 1ch;
 }
 
 .item-container {
@@ -104,4 +104,50 @@
     background-color: rgb(73, 73, 73);
     color: gray;
     margin: 0 5%;
+}
+
+#item-listing > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(73, 73, 73);
+    border-radius: 3ch;
+    width: 75%;
+    height: 50vh;
+}
+
+#item-listing > div > img {
+    align-self: center;
+    height: 50%;
+    width: 60%;
+    margin: 5% 0%;
+    border-radius: 3ch;
+}
+
+#item-listing > div > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#item-listing > div > p {
+    color: white;
+    margin: 0;
+    margin-left: 5%;
+}
+
+#item-listing > div > h1 {
+    color: white;
+    margin: 0;
+    margin-left: 5%;
+}
+
+#item-listing > div > button {
+    border: 6px solid black;
+    border-radius: 2ch;
+    background-color: rgb(73, 73, 73);
+    color: gray;
+    margin: 0 5% 5% 5%;
 }
