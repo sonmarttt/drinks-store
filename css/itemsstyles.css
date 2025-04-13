@@ -50,16 +50,31 @@
     color: white;
 }
 
+#btn-apply-filter {
+    padding: 1ch 0;
+    margin-top: 1vh;
+    background-color: black;
+    width: 80%;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    border-radius: 3ch;
+    border: 2px solid gray;
+    align-self: center;
+}
+
 #search-bar {
     background-image: url(../images/svg/search.svg);
     background-repeat: no-repeat;
     background-position: 40% 50%;
     margin: 5vh 30%;
     width: 40%;
-    height: 5vh;
+    height: 4vh;
     background-color: black;
     border: 2px solid gray;
     border-radius: 20ch;
+    color: white;
+    font-size: 1.5rem;
 }
 
 #search-bar::placeholder {

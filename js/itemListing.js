@@ -22,6 +22,7 @@ class Type {
     }
 }
 
+const drinks = new Array(0);
 const countries = new Array(0);
 const brands = new Array(0);
 const types = new Array(0);
@@ -33,6 +34,35 @@ function initApp() {
     brandBtn.addEventListener('click', showBrands);
     const typeBtn = document.getElementById("btn-type");
     typeBtn.addEventListener('click', showTypes);
+    const input = document.getElementById("search-bar");
+    input.addEventListener('keyup', (e) => {
+        if (e.key == "Enter") {
+            console.log("You pressed Enter");
+            search(input)
+        }
+    })
+}
+
+function search(input) {
+    const itemListing = document.getElementById("item-listing");
+    const searchData = new Array(0);
+    const search = input.value;
+    drinks.forEach(drink => {
+        console.log(drink);
+        if (drink.title.toLowerCase().includes(search.toLowerCase()) 
+        || (drink.country != null && drink.country.toLowerCase().includes(search.toLowerCase()))
+        || (drink.brand != null && drink.brand.toLowerCase().includes(search.toLowerCase()))
+        || (drink.category != null && drink.category.toLowerCase().includes(search.toLowerCase()))) {
+            searchData.push(drink);
+        }
+    });
+    if (searchData.length != 0) {
+        itemListing.innerHTML = "";
+        parseDrinks(searchData);
+    } else {
+        itemListing.innerHTML = "";
+        parseDrinks(drinks);
+    }
 }
 
 function showCountries() {
@@ -114,9 +144,8 @@ function showTypes() {
 }
 
 async function fetchDrinks() {
-    const numOfPages = 10;
+    const numOfPages = 5;
     try {
-        const drinks = new Array(0);
         for (let i = 1; i <= numOfPages; i++) {
             const resourceUri = `https://lcbostats.com/api/alcohol?page=${i}`;
             const data = await fetchData(resourceUri);
