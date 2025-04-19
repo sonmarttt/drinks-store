@@ -1,0 +1,14 @@
+{
+    "categories": [
+        {
+            "categoryId": 1,
+            "categoryName": "beer",
+            "description": "Beers"
+        }
+    ],
+    "products": [
+        {
+            "itemId": 1
+        }
+    ]
+}
