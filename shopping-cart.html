@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/shoppingcartstyles.css">
 </head>
 <body>
@@ -60,44 +61,59 @@
 
     <footer id="footer">
         <div class="footer-container">
-            <div class="footer-links">
-                <h1 class="footer-header">POUR DECITIONS</h1>
-                <div class="footer-main-links">
-                    <a class="nav-link nav-button1" href="index.html">Home</a>
-                    <a class="nav-link nav-button1"
-                        href="contact-us.html">Contact
-                        Us</a>
-                    <a class="nav-link nav-button1" href="items.html">Items</a>
-                    <a class="nav-link nav-button1"
-                        href="shopping-cart.html">Shopping
-                        Cart</a>
-                    <a class="nav-link nav-button1" href="faq.html">FAQ</a>
-                </div>
-                <div class="footer-form">
-                    <h1 class="footer-form-title">Subscribe to our Newsletter</h1>
-                    <input type="email" placeholder="email"
-                        class="footer-input"><br>
-                    <button type="submit" class="footer-button">Subscribe</button>
-                </div>
+            <!-- Empty div for spacing -->
+            <div class="footer-top-space">
+            
             </div>
-            <div class="footer-social-media">
-                <h1 class="follow">Follow us on:</h1>
-                <i class="bi bi-twitter"></i><span>Twitter</span>
-                <i class="bi bi-instagram"></i><span>Facebook</span>
-                <i class="bi bi-facebook"></i><span>Facebook</span>
-            </div>
-            <div class="footer-information">
-                <div class="footer-info-item">
-                    <i class="bi bi-geo-alt-fill"></i><span>123 Street 200</span>
+            <img src="images/svg/pngfooter.png" class="footer-floating-image">
+            <div id="footer-cont" class="footer-content">
+                <!-- Left Column: Brand, Links, Form -->
+                <div class="footer-column footer-left">
+                    <p class="footer-header">POUR DECITIONS</p>
+                    <div class="footer-main-links">
+                        <a class="footer-nav-link" href="index.html">Home</a>
+                        <a class="footer-nav-link" href="contact-us.html">Contact
+                            Us</a>
+                        <a class="footer-nav-link" href="items.html">Items</a>
+                        <a class="footer-nav-link" href="shopping-cart.html">Shopping
+                            Cart</a>
+                        <a class="footer-nav-link " href="faq.html">FAQ</a>
+                    </div>
+                    <div class="footer-form">
+                        <p class="footer-form-title">Subscribe To Our
+                            Newsletter</p>
+                        <input type="email" placeholder="Email"
+                            class="footer-input"><br>
+                        <button type="submit"
+                            class="footer-button">Subscribe</button>
+                    </div>
                 </div>
-                <div class="footer-info-item">
-                    <i class="bi bi-telephone-fill"></i><span>514 123 4567</span>
+                <!-- Center Column: Image -->
+                <div class="footer-column footer-center">
+                    <div class="footer-social-media">
+                        <i id="media-icons" class="bi bi-twitter"></i>
+                        <i id="media-icons" class="bi bi-instagram"></i>
+                        <i id="media-icons" class="bi bi-facebook"></i>
+                    </div>
                 </div>
-                <div class="footer-info-item">
-                    <i class="bi bi-clock-fill"></i><span>6AM | 2AM</span>
-                </div>
-                <div class="footer-info-item">
-                    <i class="bi bi-envelope-fill"></i><span>PourDecitions@gmail.com</span>
+                <!-- Right Column: Contact Info -->
+                <div class="footer-column footer-right">
+                    <div class="footer-info-item">
+                        <i id="info-icons" class="bi bi-geo-alt-fill"></i>
+                        <span class="info-text">123 Street 200</span>
+                    </div>
+                    <div class="footer-info-item">
+                        <i id="info-icons" class="bi bi-telephone-fill"></i>
+                        <span class="info-text">514 123 4567</span>
+                    </div>
+                    <div class="footer-info-item">
+                        <i id="info-icons" class="bi bi-clock-fill"></i>
+                        <span class="info-text">6AM | 2AM</span>
+                    </div>
+                    <div class="footer-info-item">
+                        <i id="info-icons" class="bi bi-envelope-fill"></i>
+                        <span class="info-text">PourDecitions@gmail.com</span>
+                    </div>
                 </div>
             </div>
         </div>
