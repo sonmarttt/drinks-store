@@ -64,7 +64,7 @@
 }
 
 #search-bar {
-    background-image: url(../data/images/svg/search.svg);
+    background-image: url(../data/images/search.svg);
     background-repeat: no-repeat;
     background-position: 40% 50%;
     margin: 5vh 30%;
