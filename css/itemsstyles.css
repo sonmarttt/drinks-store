@@ -178,3 +178,14 @@
     color: gray;
     margin: 0 5% 5% 5%;
 }
+
+/* Animation Styling */
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+}

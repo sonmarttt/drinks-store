@@ -2,6 +2,7 @@ main {
     display: flex;
     width: 60%;
     margin-left: 20%;
+    margin-top: 10vh;
     gap: 10%;
 }
 

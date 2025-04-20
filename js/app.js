@@ -1,6 +1,7 @@
 import { fetchData } from "./modules/fetch.js";
 import { search } from "./modules/search.js";
 import { countFilters, showBrands, showCountries, showTypes } from "./modules/filters.js";
+import { observer } from "./modules/animationOnScroll.js";
 
 document.addEventListener('DOMContentLoaded', fetchDrinks);
 document.addEventListener('DOMContentLoaded', initApp);
@@ -8,6 +9,8 @@ document.addEventListener('DOMContentLoaded', initApp);
 const drinks = new Array(0);
 
 function initApp() {
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((element) => observer.observe(element));
     const countryBtn = document.getElementById("btn-country");
     countryBtn.addEventListener('click', showCountries);
     const brandBtn = document.getElementById("btn-brand");
@@ -20,8 +23,9 @@ function initApp() {
             console.log("You pressed Enter");
             search(input, drinks)
         }
-    })
+    });
 }
+
 
 async function fetchDrinks() {
     const numOfPages = 5;
