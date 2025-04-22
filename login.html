@@ -13,7 +13,7 @@
             <nav class="home-nav">
                 <div class="logo">
                     <a class="nav-link nav-logo" href="index.html">POUR
-                        DECITIONS</a>
+                        DECISIONS</a>
                 </div>
                 <div class="main-links">
                     <a class="nav-link nav-button1" href="index.html">Home</a>
@@ -26,9 +26,11 @@
                 </div>
             </nav>
         </header>
-        <div class="login-page">
-            <form action="#" method="post">
-                <fieldset id="login">
+        </div>
+        <div class="login-div">
+            
+            <div class="login-page">
+                <form>
                     <div class="login-signup-nav">
                         <a id="currentPage" href="login.html">
                             <h1>Login</h1>
@@ -38,21 +40,26 @@
                             <h1>Sign Up</h1>
                         </a>
                     </div>
-                    <hr class="login-hr"><br>
-                    <label for="email" class="login-label">Email:</label><br>
-                    <input type="email" id="email" name="email" required
-                        class="login-input"><br><br>
-                    <label for="password"
-                        class="login-label">Password:</label><br>
-                    <input type="password" id="password" name="password"
-                        required class="login-input"><br><br>
-                    <input type="checkbox" id="remember-me" name="remember-me"
-                        class="login-checkbox"> <label for="remember-me">Remember me</label>
-                    <br><br>
-                    <button type="submit" class="login-button">Login</button>
-                </fieldset>
-            </form>
+                    <hr class="login-hr">
+                    <div class="inputbox">
+                        <input type="email" id="email" name="email" required
+                            class="login-input">
+                        <label for="email" class="login-label">Email:</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="password" name="password"
+                            required class="login-input">
+                        <label for="password"
+                            class="login-label">Password:</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <button>Log in</button>
+                </form>
+            </div>
         </div>
-    </div>
+    
 </body>
 </html>
