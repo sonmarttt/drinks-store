@@ -2,13 +2,80 @@
     "categories": [
         {
             "categoryId": 1,
-            "categoryName": "beer",
-            "description": "Beers"
+            "categoryName": "Beer",
+            "description": "Alcoholic beverage produced by the brewing and fermentation of starches from cereal grain"
+        },
+        {
+            "categoryId": 2,
+            "categoryName": "Red Wine",
+            "description": "Type of wine made from dark-colored grape varieties"
+        },
+        {
+            "categoryId": 3,
+            "categoryName": "Sparkling Wine",
+            "description": "Wine with significant levels of carbon dioxide in it, making it fizzy"
+        },
+        {
+            "categoryId": 4,
+            "categoryName": "White Wine",
+            "description": "Wine that is fermented without undergoing the process of maceration, which involves prolonged contact between the juice with the grape skins, seeds, and pulp"
+        },
+        {
+            "categoryId": 5,
+            "categoryName": "Whisky",
+            "description": "Liquor made from fermented grain mash"
         }
     ],
     "products": [
         {
-            "itemId": 1
+            "permanent_id": 288365,
+            "categoryId": 1,
+            "title": "Holsten Premium Pilsner",
+            "description": "Medium gold colour; light hop & cooked grain aromas with underlying pear notes; clean finish",
+            "brand": "Holsten",
+            "price": 2.6,
+            "quantityInStock": 74,
+            "image": "images/drink-images/288365.jpg"
+        },
+        {
+            "permanent_id": 925453,
+            "categoryId": 2,
+            "title": "Kilikanoon Killerman's Run Shiraz",
+            "description": "This Shiraz is Kilikanoon's idea of an entry-level wine. Some introduction! A hedonistic pleasure, it's plush with apricot and black plum jam, floral lift and mixed berries fruit. A bold match for barbecued spareribs, spicy sausage pizza or grilled hanger steaks.",
+            "brand": "Kilikanoon",
+            "price": 19.95,
+            "quantityInStock": 24,
+            "image": "images/drink-images/925453.jpg"
+        },
+        {
+            "permanent_id": 925735,
+            "categoryId": 3,
+            "title": "Gloria Ferrer Blanc de Noirs",
+            "description": "Very pale pink tinge. This has an intriguing, evolved nose that incorporates ripe red berry fruit with plenty of toasty-yeasty autolytic character, moist barley, toasted almonds and wildflower honey. The palate is full, rich and creamy, with a vague impression of sweetness but impressive depth and length overall. This is a bold and satisfying, powerful yet balanced bubbly from Sonoma, with superior depth and concentration. Score - 91. (John Szabo, MS, winealign.com, May 3, 2017)",
+            "brand": "Gloria Ferrer",
+            "price": 34.95,
+            "quantityInStock": 54,
+            "image": "images/drink-images/925735.jpg"
+        },
+        {
+            "permanent_id": 288217,
+            "categoryId": 4,
+            "title": "Yalumba Organic Viognier 2021",
+            "description": "A splendid expression of the variety showing apricot, mango, potpourri and orange peel aromas, followed by a concentrated palate displaying richly textured mouthfeel and beautifully pitched acidity, offering awesome drinking. At its best: now to 2025. Score - 94. (Sam Kim, wineorbit.co.nz, Sept. 2021)",
+            "brand": "Vintages Front Line Release",
+            "price": 16.95,
+            "quantityInStock": 45,
+            "image": "images/drink-images/288217.jpg"
+        },
+        {
+            "permanent_id": 288563,
+            "categoryId": 5,
+            "title": "Canadian Club Whisky",
+            "description": "The legend of Canadian Club began in 1858 and grew to become one of the world's most iconic whiskies. Pouring a medium gold you will find aromas of roasted almond, vanilla and pepper; with spicy vanilla, cornflakes and a faint nutty flavour on a medium weight palate with a long finish.",
+            "brand": "Canadian Club",
+            "price": 142.95,
+            "quantityInStock": 15,
+            "image": "images/drink-images/288563.jpg"
         }
     ]
 }
