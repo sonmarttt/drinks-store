@@ -56,6 +56,7 @@ export function parseDrinks(drinks) {
         const drinkImg = createCustomElement(item, 'img', '');
         drinkImg.src = drink.image_url;
         const drinkName = createCustomElement(item, 'a', drink.title);
+        drinkName.href = `item-detail.html?id=${drink.id}`;
         const drinkDetail = createCustomElement(item, 'p', `${drink.category} | ${drink.volume}ml | ${drink.country}`);
         const drinkPrice = createCustomElement(item, 'h1', `${USDollar.format(drink.price)}`);
         const cartButton = createCustomElement(item, 'button', 'Add to Cart');
