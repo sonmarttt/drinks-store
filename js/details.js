@@ -52,7 +52,6 @@ async function fetchDrinkById(id) {
         console.error("Error fetching drink by ID:", error);
         throw error;
     }
-    
 }
 
 
@@ -62,7 +61,6 @@ export function parseDrinksInfo(drink) {
         currency: 'USD',
     });
    
-    
     //insert the image in its div
     const drinkImg = document.querySelector(".drink-detail-image");
     if (drinkImg) {
