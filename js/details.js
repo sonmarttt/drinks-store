@@ -65,10 +65,8 @@ export function parseDrinksInfo(drink) {
     
     //insert the image in its div
     const drinkImg = document.querySelector(".drink-detail-image");
-    
     if (drinkImg) {
         drinkImg.src = drink.image_url;
-        removeWhiteBackground(img);
     }
 
     //add drink info in the other div
@@ -128,6 +126,3 @@ function createDetailElement(parent, label, value) {
     detailElement.innerHTML = `${label} <br>${value}`;
     parent.appendChild(detailElement);
 }
-
-
-  
