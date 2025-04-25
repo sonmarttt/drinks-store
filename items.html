@@ -55,12 +55,44 @@
                     <!-- <button id="btn-date" class="filter-button" for="date-range">Date Range
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         +</button> -->
-                    <button id="btn-price" class="filter-button" for="price-range">Price Range
+                    <button id="btn-price" class="filter-button" for="price-range">Price
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         +</button>
-                    <button id="btn-degree" class="filter-button" for="degree">Alcohol Degree
+                    <div id="price-filter" style="display: none;">
+                        <div class="price-slider">
+                            <input type="range" name="min-price" id="min-price" min="0" max="1000">
+                            <input type="range" name="max-price" id="max-price" min="0" max="1000">
+                        </div>
+                        <div class="price-controls">
+                            <div class="price-control-container">
+                                <div class="price-control-container-label">Min</div>
+                                <input type="number" name="price-control-container-input" id="price-control-container-input" value="10" min="0" max="1000">
+                            </div>
+                            <div class="price-control-container">
+                                <div class="price-control-container-label" id="max-label">Max</div>
+                                <input type="number" name="price-control-container-input" id="price-control-container-input" value="1000" min="0" max="1000">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-degree" class="filter-button" for="degree">Degree of Alcohol
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         +</button>
+                    <div id="degree-filter" style="display: none;">
+                        <div class="degree-slider">
+                            <input type="range" name="min-degree" id="min-degree" min="0" max="75">
+                            <input type="range" name="max-degree" id="max-degree" min="0" max="75">
+                        </div>
+                        <div class="degree-controls">
+                            <div class="degree-control-container">
+                                <div class="degree-control-container-label">Min</div>
+                                <input type="number" name="degree-control-container-input" id="degree-control-container-input" value="0" min="0" max="75">
+                            </div>
+                            <div class="degree-control-container">
+                                <div class="degree-control-container-label" id="max-label">Max</div>
+                                <input type="number" name="degree-control-container-input" id="degree-control-container-input" value="50" min="0" max="75">
+                            </div>
+                        </div>
+                    </div>
                     <button id="btn-type" class="filter-button" for="drink-type">Drink Type
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         +</button>

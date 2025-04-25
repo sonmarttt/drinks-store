@@ -75,6 +75,30 @@ export function countFilters(drinks) {
     console.log(types);
 }
 
+export function showPriceFilter() {
+    const priceDiv = document.getElementById("price-filter");
+    const priceBtn = document.getElementById("btn-price");
+    if (priceDiv.style.display === "none") {
+        priceDiv.style.display = "flex";
+        priceBtn.innerHTML = "Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-";
+    } else {
+        priceBtn.innerHTML = "Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+";
+        priceDiv.style.display = "none";
+    }
+}
+
+export function showDegreeFilter() {
+    const degreeDiv = document.getElementById("degree-filter");
+    const degreeBtn = document.getElementById("btn-degree");
+    if (degreeDiv.style.display === "none") {
+        degreeDiv.style.display = "flex";
+        degreeBtn.innerHTML = "Degree of Alcohol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-";
+    } else {
+        degreeBtn.innerHTML = "Degree of Alcohol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+";
+        degreeDiv.style.display = "none";
+    }
+}
+
 export function showCountries() {
     const countryDiv = document.getElementById("country-filter");
     const countryBtn = document.getElementById("btn-country");

@@ -1,6 +1,6 @@
 import { fetchData } from "./modules/fetch.js";
 import { search } from "./modules/search.js";
-import { countFilters, showBrands, showCountries, showTypes } from "./modules/filters.js";
+import { countFilters, showBrands, showCountries, showTypes, showPriceFilter, showDegreeFilter } from "./modules/filters.js";
 import { observer } from "./modules/animationOnScroll.js";
 
 document.addEventListener('DOMContentLoaded', fetchDrinks);
@@ -15,6 +15,10 @@ function initApp() {
     countryBtn.addEventListener('click', showCountries);
     const brandBtn = document.getElementById("btn-brand");
     brandBtn.addEventListener('click', showBrands);
+    const priceBtn = document.getElementById("btn-price");
+    priceBtn.addEventListener('click', showPriceFilter);
+    const degreeBtn = document.getElementById("btn-degree");
+    degreeBtn.addEventListener('click', showDegreeFilter);
     const typeBtn = document.getElementById("btn-type");
     typeBtn.addEventListener('click', showTypes);
     const input = document.getElementById("search-bar");
@@ -57,7 +61,7 @@ export function parseDrinks(drinks) {
         drinkImg.src = drink.image_url;
         const drinkName = createCustomElement(item, 'a', drink.title);
         drinkName.href = `item-detail.html?id=${drink.permanent_id}`;
-        const drinkDetail = createCustomElement(item, 'p', `${drink.category} | ${drink.volume}ml | ${drink.country}`);
+        const drinkDetail = createCustomElement(item, 'p', `${drink.subcategory} | ${drink.volume}ml | ${drink.country}`);
         const drinkPrice = createCustomElement(item, 'h1', `${USDollar.format(drink.price)}`);
         const cartButton = createCustomElement(item, 'button', 'Add to Cart');
     });

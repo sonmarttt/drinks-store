@@ -169,6 +169,7 @@ body::after{
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 5%;
+    padding: 0 5%;
 }
 
 #item-listing > div > p {
@@ -189,6 +190,117 @@ body::after{
     background-color: rgb(73, 73, 73);
     color: gray;
     margin: 0 5% 5% 5%;
+}
+
+/* Price Slider Styling */
+
+#price-filter {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5% auto;
+}
+
+.price-slider {
+    position: relative;
+    min-height: 3ch;
+}
+
+.price-controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Degree Slider Styling */
+
+#degree-filter {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 5% auto;
+}
+
+.degree-slider {
+    position: relative;
+    min-height: 3ch;
+}
+
+.degree-controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    color: white;
+}
+
+#max-label {
+    text-align: right;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;  
+}
+  
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #f7f7f7;
+}
+  
+input[type=range]::-webkit-slider-thumb:active {
+    box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+    -webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+}
+  
+input[type="number"] {
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 7ch;
+    height: 2ch;
+    font-size: 1em;
+    border-radius: 1ch;
+    border: 2px solid gray;
+    padding-right: 1ch;
+}
+  
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+     opacity: 1;
+}
+  
+input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: #C6C6C6;
+    pointer-events: none;
+}
+  
+#min-price {
+    height: 0;
+    z-index: 1;
 }
 
 /* Animation Styling */
