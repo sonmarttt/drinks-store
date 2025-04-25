@@ -94,7 +94,7 @@ export function parseDrinksInfo(drink) {
 
     const stock = document.querySelector(".stock");
     if (stock) {
-        stock.textContent = `Stock: ${drink.is_buyable || 'Unknown'} `;
+        stock.textContent = `Stock: ${drink.out_of_stock|| 'Unknown'} `;
     }
 }
 
