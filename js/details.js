@@ -1,12 +1,12 @@
 import { fetchData } from "./modules/fetch.js";
 import { observer } from "./modules/animationOnScroll.js";
 
-
 document.addEventListener('DOMContentLoaded', loadDrinkDetails);
 
 async function loadDrinkDetails() {
     const params = new URLSearchParams(window.location.search);
     const itemId = params.get("id");
+    console.log("Item ID from URL:", itemId);
     if (!itemId) {
         console.error("No drink ID found in URL.");
         return;
@@ -44,12 +44,15 @@ async function fetchDrinkById(id) {
             const data = await fetchData(resourceUri);
             AllDrinks.push(...data);
         }
-        const drink = AllDrinks.find(d => d.id == id);
+        const drink = AllDrinks.find(d => d.permanent_id == id);
+        console.log("All drinks loaded:", AllDrinks);
+
         return drink;
     } catch (error) {
         console.error("Error fetching drink by ID:", error);
         throw error;
     }
+    
 }
 
 
@@ -58,12 +61,14 @@ export function parseDrinksInfo(drink) {
         style: 'currency',
         currency: 'USD',
     });
-    //insert in the container
-    const itemListing = document.getElementById("drink-info");
+   
+    
     //insert the image in its div
     const drinkImg = document.querySelector(".drink-detail-image");
+    
     if (drinkImg) {
         drinkImg.src = drink.image_url;
+        removeWhiteBackground(img);
     }
 
     //add drink info in the other div
@@ -73,16 +78,17 @@ export function parseDrinksInfo(drink) {
         name.textContent = drink.title;
     }
 
-    const datail = document.querySelector(".data");
-    if(detail && detail.length > 0) {
-        data[0].textContent = `${drink.category} | ${drink.volume}ml | ${drink.alcohol_content} %`;
-        data[1].textContent = `${drink.country} | ${drink.date}`;
-        data[2].textContent = `${drink.brand}`;
+    const data = document.querySelectorAll(".data");
+    if (data && data.length > 0) {
+        if (data[0]) data[0].textContent = `${drink.category} | ${drink.volume}ml | ${drink.alcohol_content}%`;
+        if (data[1]) data[1].textContent = `${drink.country || 'N/A'}`;
+        if (data[2]) data[2].textContent = `${drink.brand || 'N/A'}`;
     }
+
 
     const rating = document.querySelector(".rating");
     if (rating) {
-        rating.textContent = `Rating: ${drink.rating} | ${drink.rating_count} reviews`;
+        rating.textContent = `Rating: ${drink.rating || 'N/A'} | ${drink.reviews || '0'} reviews`;
     }
 
     const price = document.querySelector(".price");
@@ -92,7 +98,7 @@ export function parseDrinksInfo(drink) {
 
     const stock = document.querySelector(".stock");
     if (stock) {
-        stock.textContent = `Stock: ${drink.in_stock} units`;
+        stock.textContent = `Stock: ${drink.is_buyable || 'Unknown'} `;
     }
 }
 
@@ -122,3 +128,6 @@ function createDetailElement(parent, label, value) {
     detailElement.innerHTML = `${label} <br>${value}`;
     parent.appendChild(detailElement);
 }
+
+
+  
