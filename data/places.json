@@ -1,0 +1,34 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Winery",
+            "description": "Wineries",
+            "markerIcon": "data/markers/winebar.png"
+        },
+        {
+            "id": 2,
+            "name": "Brewery",
+            "description": "Breweries",
+            "markerIcon": "data/markers/beergarden.png"
+        }
+    ],
+    "places": [
+        {
+            "name": "Exquisite Wines and Spirits",
+            "description": "description",
+            "point": {
+                "coordinates": "45.52320103373719, -73.69408399221575"
+            },
+            "categoryId": 1
+        },
+        {
+            "name": "McAuslan - Brasserie & Distillerie",
+            "description": "description",
+            "point": {
+                "coordinates": "45.47094072180444, -73.59683835920679"
+            },
+            "categoryId": 2
+        }
+    ]
+}

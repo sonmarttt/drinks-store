@@ -7,7 +7,7 @@ export async function fetchData(resourceUri) {
             throw new Error(`An error occurred while processing the request ${response.status}`);
         }
         const data = await response.json();
-        return data.data;
+        return data;
     } catch (error) {
         throw error;
     }

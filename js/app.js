@@ -1,33 +1,25 @@
 import { fetchData } from "./modules/fetch.js";
-import { search } from "./modules/search.js";
-import { countFilters, showBrands, showCountries, showTypes, showPriceFilter, showDegreeFilter } from "./modules/filters.js";
+import { countFilters } from "./modules/filters.js";
 import { observer } from "./modules/animationOnScroll.js";
+import { initItems } from "./modules/itemListing.js";
+import { initMapView } from "./modules/map.js";
 
-document.addEventListener('DOMContentLoaded', fetchDrinks);
 document.addEventListener('DOMContentLoaded', initApp);
 
 const drinks = new Array(0);
 
 function initApp() {
+    const page = document.documentElement.dataset.page;
+
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((element) => observer.observe(element));
-    const countryBtn = document.getElementById("btn-country");
-    countryBtn.addEventListener('click', showCountries);
-    const brandBtn = document.getElementById("btn-brand");
-    brandBtn.addEventListener('click', showBrands);
-    const priceBtn = document.getElementById("btn-price");
-    priceBtn.addEventListener('click', showPriceFilter);
-    const degreeBtn = document.getElementById("btn-degree");
-    degreeBtn.addEventListener('click', showDegreeFilter);
-    const typeBtn = document.getElementById("btn-type");
-    typeBtn.addEventListener('click', showTypes);
-    const input = document.getElementById("search-bar");
-    input.addEventListener('keyup', (e) => {
-        if (e.key == "Enter") {
-            console.log("You pressed Enter");
-            search(input, drinks)
-        }
-    });
+    
+    if (page === "items") {
+        fetchDrinks();
+        initItems();
+    } else if (page === "map") {
+        initMapView();
+    }
 }
 
 
@@ -37,8 +29,8 @@ async function fetchDrinks() {
         for (let i = 1; i <= numOfPages; i++) {
             const resourceUri = `https://lcbostats.com/api/alcohol?page=${i}`;
             const data = await fetchData(resourceUri);
-            for (let j = 0; j < data.length; j++) {
-                drinks.push(data[j]);
+            for (let j = 0; j < data.data.length; j++) {
+                drinks.push(data.data[j]);
             }
         } 
         countFilters(drinks);
