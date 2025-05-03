@@ -46,7 +46,7 @@ body::after{
     margin-left: 10%;
     align-self: flex-start;
     color: white;
-    background-color: black;
+    background-color: transparent;
     border: none;
 }
 
@@ -65,7 +65,7 @@ body::after{
 #btn-apply-filter {
     padding: 1ch 0;
     margin-top: 1vh;
-    background-color: black;
+    background-color: transparent;
     width: 80%;
     text-align: center;
     font-size: 1rem;
@@ -82,7 +82,7 @@ body::after{
     margin: 5vh 30%;
     width: 40%;
     height: 4vh;
-    background-color: black;
+    background-color: transparent;
     border: 2px solid gray;
     border-radius: 20ch;
     color: white;
@@ -190,6 +190,11 @@ body::after{
     background-color: rgb(73, 73, 73);
     color: gray;
     margin: 0 5% 5% 5%;
+}
+
+#item-listing > div > button:hover {
+    color: rgb(184, 184, 184);
+    background-color: rgb(53, 52, 52);
 }
 
 /* Price Slider Styling */

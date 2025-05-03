@@ -3,6 +3,7 @@ import { countFilters } from "./modules/filters.js";
 import { observer } from "./modules/animationOnScroll.js";
 import { initItems } from "./modules/itemListing.js";
 import { initMapView } from "./modules/map.js";
+import { initCart } from "./modules/cart.js";
 
 document.addEventListener('DOMContentLoaded', initApp);
 
@@ -19,9 +20,10 @@ function initApp() {
         initItems();
     } else if (page === "map") {
         initMapView();
+    } else if (page === "shopping-cart") {
+        initCart();
     }
 }
-
 
 async function fetchDrinks() {
     const numOfPages = 5;
@@ -33,6 +35,7 @@ async function fetchDrinks() {
                 drinks.push(data.data[j]);
             }
         } 
+        sessionStorage.setItem('drinks', JSON.stringify(drinks));
         countFilters(drinks);
         parseDrinks(drinks);
         console.log(drinks);
@@ -56,6 +59,16 @@ export function parseDrinks(drinks) {
         const drinkDetail = createCustomElement(item, 'p', `${drink.subcategory} | ${drink.volume}ml | ${drink.country}`);
         const drinkPrice = createCustomElement(item, 'h1', `${USDollar.format(drink.price)}`);
         const cartButton = createCustomElement(item, 'button', 'Add to Cart');
+        cartButton.setAttribute('data-drink-id', drink.permanent_id);
+        cartButton.addEventListener('click', (event) => {
+            const drinkId = event.target.dataset.drinkId;
+            let cart = JSON.parse(sessionStorage.getItem("cart"));
+            if (cart == null) {
+                cart = new Array(0);
+            }
+            cart.push(drinkId);
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+        })
     });
 }
 

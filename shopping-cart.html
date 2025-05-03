@@ -36,25 +36,51 @@
         </header>
 
         <main>
-            <div class="cart">
+            <div id="cart">
+                <h1 id="shopping-cart-title">Shopping Cart</h1>
+                <div class="sub-text">
+                    <i class="bi bi-truck" style="color: white;"></i>
+                    <p>Add items worth $70.00 to get Free delivery</p>
+                </div>
+                <hr>
+                <div id="cart-items">
 
+                </div>
             </div>
             <div class="summary">
                 <h1 id="summary-title">Summary</h1>
                 <hr>
-                <p class="cart-detail">Product Subtotal:</p>
-                <p class="price">$0.00</p>
+                <div class="row">
+                    <p class="cart-detail">Product Subtotal:</p>
+                    <p class="price" id="product-subtotal">$0.00</p>
+                </div>
                 <br>
-                <p class="cart-detail">Taxes: <span>$0.00</span></p>
+                <div class="row">
+                    <p class="cart-detail">Taxes:</p>
+                    <p class="price" id="taxes">$0.00</p>
+                </div>
                 <br>
                 <p class="cart-detail">Delivery:</p>
-                <input class="radio-button" type="radio" name="delivery" id="store"> 
-                <p class="cart-detail radio-button-label">In Store: 1-2 business days <span>$0.00</span></p>
+                <div class="row">
+                    <div>
+                        <input class="radio-button" type="radio" name="delivery" id="store">
+                        <p class="cart-detail radio-button-label">In Store: 1-2 business days</p>
+                    </div>
+                    <p class="price">$4.00</p>
+                </div>
                 <br>
-                <input class="radio-button" type="radio" name="delivery" id="home"> 
-                <p class="cart-detail radio-button-label">Home: 3-5 business days $0.00</p>
+                <div class="row">
+                    <div>
+                        <input class="radio-button" type="radio" name="delivery" id="home">
+                        <p class="cart-detail radio-button-label">Home: 3-5 business days</p>
+                    </div>
+                    <p class="price">$2.00</p>
+                </div>
                 <hr>
-                <p class="cart-detail">Total Amount: <span>$0.00</span></p>
+                <div class="row">
+                    <p class="cart-detail">Total Amount: </p>
+                    <p class="price" id="total">$0.00</p>
+                </div>
             </div>
         </main>
     </div>
@@ -118,5 +144,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/app.js" type="module" defer></script>
 </body>
 </html>

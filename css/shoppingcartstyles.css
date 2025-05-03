@@ -11,20 +11,126 @@
       pointer-events: none;
   }
 
+p {
+    font-size: 1.2em;
+}
+
 main {
     display: flex;
     width: 60%;
     margin-left: 20%;
     margin-top: 10vh;
-    gap: 10%;
 }
 
-.cart {
-    flex-grow: 6;
+/* Cart Styling */
+
+#cart {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#shopping-cart-title {
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+#cart > .sub-text {
+    display: flex;
+    justify-content: center;
+    padding: 2% 0;
+    width: 50%;
+}
+
+#cart > div > p {
+    padding-left: 1ch;
+    margin: 0;
+    font-size: 0.95rem;
+    color: white;
+    text-align: center;
+}
+
+#cart > hr {
+    width: 60%;
+}
+
+#cart-items {
+    width: 80%;
+}
+
+.drink-container * {
+    color: white;
+    margin: 0;
+}
+
+.div1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.div2 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.div2 > div > h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.drink-container {
+    margin-top: 3vh;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    background-color: rgb(73, 73, 73);
+    box-sizing: border-box;
+    border-radius: 2ch;
+    padding: 3%;
+}
+
+.drink-container > div > img {
+    width: 80%;
+    height: 60%;
+    border-radius: 2ch;
+}
+
+.quantity-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity-div > div {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.quantity-div > div > p {
+    cursor: pointer;
+}
+
+.quantity-div > div > p:hover {
+    font-weight: 900;
+    color: black;
+}
+
+.quantity-div > div > div {
+    text-align: center;
+}
+
+/* Summary Styling */
 
 .summary {
-    flex-grow: 4;
+    width: 40%;
 }
 
 #summary-title {
@@ -34,21 +140,24 @@ main {
     text-align: center;
 }
 
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row > div {
+    width: 60%;
+}
+
 .cart-detail {
-    display: inline;
     color: white;
     margin: 0;
 }
 
 .price {
     margin-right: 0;
-    display: inline;
     color: white;
     margin: 0;
-}
-
-span {
-    text-align: end;
 }
 
 hr {
