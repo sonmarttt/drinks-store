@@ -6,6 +6,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="css/signupstyles.css">
     <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
     <div class="container">
@@ -23,136 +24,97 @@
                     <a class="nav-link nav-button1"
                         href="shopping-cart.html">Shopping Cart</a>
                     <a class="nav-link nav-button1" href="faq.html">FAQ</a>
+                    <a class="nav-link nav-button1" href="map.html">Map</a>
                 </div>
                
             </nav>
         </header>
-        <div class="login-page">
-            <form action="#" method="post">
-                <fieldset id="login">
+        <div class="login-div">
+            <div class="login-page">
+                <form>
                     <div class="login-signup-nav">
-                        <a id="currentPage" href="login.html">
-                            <h1>Login</h1>
-                        </a>
+                        <a href="login.html"><h1>Login</h1></a>
                         <h1> / </h1>
-                        <a href="signup.html">
-                            <h1>Sign Up</h1>
-                        </a>
+                        <a id="currentPage" href="signup.html"><h1>Sign Up</h1></a>
                     </div>
-                    <hr class="login-hr"><br>
+                    <hr class="login-hr">
+
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="first-name" class="login-label">First
-                                Name</label><br>
-                            <input type="text" id="first-name" name="first-name"
-                                placeholder="First Name" required
-                                class="login-input">
+                        <div class="form-group inputbox">
+                            <input type="text" id="first-name" name="first-name" required class="login-input">
+                            <label for="first-name" class="login-label">First Name</label>
                         </div>
-                        <div class="form-group">
-                            <label for="last-name" class="login-label">Last
-                                Name</label><br>
-                            <input type="text" id="last-name" name="last-name"
-                                placeholder="Last Name" required
-                                class="login-input">
-                        </div>
-                    </div><br>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email"
-                                class="login-label">Email</label><br>
-                            <input type="email" id="email" name="email"
-                                placeholder="example@gmail.com" required
-                                class="login-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirm-email"
-                                class="login-label">Confirm Email</label><br>
-                            <input type="email" id="confirm-email"
-                                name="confirm-email"
-                                placeholder="example@gmail.com" required
-                                class="login-input">
+                        <div class="form-group inputbox">
+                            <input type="text" id="last-name" name="last-name" required class="login-input">
+                            <label for="last-name" class="login-label">Last Name</label>
                         </div>
                     </div>
+
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="password"
-                                class="login-label">Password:</label><br>
-                            <input type="password" id="password" name="password"
-                                placeholder="Password" required
-                                class="login-input">
+                        <div class="form-group inputbox">
+                            <input type="email" id="email" name="email" required class="login-input">
+                            <label for="email" class="login-label">Email</label>
                         </div>
-                        <div class="form-group">
-                            <label for="confirm-password"
-                                class="login-label">Confirm
-                                Password:</label><br>
-                            <input type="password" id="confirm-password"
-                                name="confirm-password"
-                                placeholder="Confirm Password" required
-                                class="login-input">
-                        </div>
-                    </div><br><br>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone"
-                                class="login-label">Phone</label><br>
-                            <input type="tel" id="phone" name="phone"
-                                placeholder="1234567890 " required
-                                class="login-input"><br><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob" class="login-label">Date of
-                                Birth</label> <br>
-                            <input type="text" id="dob" name="dob"
-                                placeholder="YYYY-MM-DD" required
-                                class="login-input"><br><br>
+                        <div class="form-group inputbox">
+                            <input type="email" id="confirm-email" name="confirm-email" required class="login-input">
+                            <label for="confirm-email" class="login-label">Confirm Email</label>
                         </div>
                     </div>
+
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="address"
-                                class="login-label">Address</label><br>
-                            <input type="text" id="address" name="address"
-                                placeholder="Street Address" required
-                                class="login-input"><br><br>
+                        <div class="form-group inputbox">
+                            <input type="password" id="password" name="password" required class="login-input">
+                            <label for="password" class="login-label">Password</label>
+                        </div>
+                        <div class="form-group inputbox">
+                            <input type="password" id="confirm-password" name="confirm-password" required class="login-input">
+                            <label for="confirm-password" class="login-label">Confirm Password</label>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="country"
-                                class="login-label">Country:</label><br>
-                            <input type="text" id="country" name="country"
-                                placeholder="Country" required
-                                class="login-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="region"
-                                class="login-label">Region:</label><br>
-                            <input type="text" id="region" name="region"
-                                placeholder="Region" required
-                                class="login-input">
-                        </div>
-                    </div><br>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="city"
-                                class="login-label">City:</label><br>
-                            <input type="text" id="city" name="city"
-                                placeholder="City" required class="login-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="postal-code" class="login-label">Postal
-                                Code:</label><br>
-                            <input type="text" id="postal-code"
-                                name="postal-code" placeholder="1H1H1H" required
-                                class="login-input">
+
+                    <div class="form-row" style="width: 100%; justify-content: flex-start;">
+                        <div class="form-group inputbox" style="width: 100%;">
+                            <input type="text" id="address" name="address" required class="login-input">
+                            <label for="address" class="login-label">Street Address</label>
                         </div>
                     </div>
-                    <br>
-                    
-                    <br>
-                    <button type="submit" class="login-button">Login</button>
-                </fieldset>
-            </form>
+
+                    <div class="form-row">
+                        <div class="form-group inputbox">
+                            <input type="tel" id="phone" name="phone" required class="login-input">
+                            <label for="phone" class="login-label">Phone</label>
+                        </div>
+                        <div class="form-group inputbox">
+                            <input type="text" id="dob" name="dob" required class="login-input">
+                            <label for="dob" class="login-label">Date of Birth</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group inputbox">
+                            <input type="text" id="country" name="country" required class="login-input">
+                            <label for="country" class="login-label">Country</label>
+                        </div>
+                        <div class="form-group inputbox">
+                            <input type="text" id="region" name="region" required class="login-input">
+                            <label for="region" class="login-label">Region / Province</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group inputbox">
+                            <input type="text" id="city" name="city" required class="login-input">
+                            <label for="city" class="login-label">City</label>
+                        </div>
+                        <div class="form-group inputbox">
+                            <input type="text" id="postal-code" name="postal-code" required class="login-input">
+                            <label for="postal-code" class="login-label">Postal Code</label>
+                        </div>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

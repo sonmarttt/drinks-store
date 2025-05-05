@@ -72,8 +72,8 @@ function parseLocations(locations, map) {
 
         const marker = L.marker(location.point.coordinates.split(','), {icon: customMarker}).addTo(map);
         const placeInfo = `<h6>${location.name}</h6>
-        <p>${location.description} </p>
-        <p>Address</p>
+        <p>${location.address}</p>
+        <p>${location.time}</
         `;
         marker.bindPopup(placeInfo).openPopup();
     });

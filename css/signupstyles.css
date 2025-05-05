@@ -1,8 +1,34 @@
+body{
+    background-image: url("../data/images/loginmain.jpg");  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container{
+    padding-bottom:40px;
+}
+.login-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-top: 10vh;
+}
+
 .login-page {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 10ch 0ch 0ch 0ch;
+    align-items: flex-end;
+    padding: 2ch 5ch 5ch 5ch;
+    width: 45%;
+    
+    border-radius: 20px;
+    position: relative;
+    background-color: transparent;
+    backdrop-filter: blur(55px);
+    border:2px solid rgb(243, 218, 193);
 }
 
 .login-signup-nav {
@@ -22,56 +48,83 @@
     transition: 0.5s;
 }
 
-#login {
-    padding: 2ch 5ch 5ch 5ch;
-    border-radius: 15px;
-}
-
-#first-name,
-#last-name,
-#email,
-#confirm-email,
-#phone,
-#dob,
-#address,
-#country,
-#region,
-#city,
-#postal-code,
-#password,
-#confirm-password {
-    padding: 1ch 2ch;
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-}
-
-
-
-.form-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1ch;
-}
-
-.form-group {
-    padding: 0ch 4ch 0ch 2ch;
-    margin-bottom: 1ch;
-}
-
-
-input[type="date"] {
+.inputbox{
+    position: relative;
+    margin: 20px 0;
+    max-width: 300px;
+    border-bottom: 2px solid #ffffff;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #a3c2c2;
-    border-radius: 4px;
-    background-color: white;
-    color: #333;
-    font-size: 14px;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus ~ label, 
+input.filled ~ label {
+   top: 10px;
+   left: 0px;
+   font-size: 12px;
+}
+.login-input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0 35px 0 5px;
+    color: #ffffff;
+}
+#address{
+    width: 150%;
 }
 
 h1 {
     font-family: Faunces;
     color: white;
 }
+
+label {
+    color: white;
+    font-family: Text-Me-One, sans-serif;
+    font-size: small;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.form-row {
+  display: flex;
+  gap: 8ch;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+ 

@@ -16,19 +16,123 @@
     "places": [
         {
             "name": "Exquisite Wines and Spirits",
-            "description": "description",
+            "description": "A fine selection of wines and spirits.",
             "point": {
                 "coordinates": "45.52320103373719, -73.69408399221575"
             },
-            "categoryId": 1
+            "categoryId": 1,
+            "time": "10AM - 10PM",
+            "phone": "514-111-2222",
+            "email": "exquisite@pourdecitions.stdenis",
+            "address": "1234 Rue Saint-Denis, Montreal, QC"
         },
         {
             "name": "McAuslan - Brasserie & Distillerie",
-            "description": "description",
+            "description": "Craft beers and distillery tours.",
             "point": {
                 "coordinates": "45.47094072180444, -73.59683835920679"
             },
-            "categoryId": 2
+            "categoryId": 2,
+            "time": "11AM - 11PM",
+            "phone": "514-222-3333",
+            "email": "mcauslan@pourdecitions.sthenri",
+            "address": "5080 Rue Saint-Ambroise, Montreal, QC"
+        },
+        {
+            "name": "Old Port Cellars",
+            "description": "Historic wine cellars in Old Montreal.",
+            "point": {
+                "coordinates": "45.5075, -73.554"
+            },
+            "categoryId": 1,
+            "time": "12PM - 12AM",
+            "phone": "514-333-4444",
+            "email": "oldport@pourdecitions.vieuxmontreal",
+            "address": "350 Rue Saint-Paul E, Montreal, QC"
+        },
+        {
+            "name": "Plateau Brews",
+            "description": "Trendy microbrewery in the Plateau.",
+            "point": {
+                "coordinates": "45.527, -73.577"
+            },
+            "categoryId": 2,
+            "time": "2PM - 2AM",
+            "phone": "514-444-5555",
+            "email": "plateau@pourdecitions.montroyal",
+            "address": "99 Avenue du Mont-Royal E, Montreal, QC"
+        },
+        {
+            "name": "Rosemont Winery",
+            "description": "Local wines and tasting events.",
+            "point": {
+                "coordinates": "45.555, -73.595"
+            },
+            "categoryId": 1,
+            "time": "1PM - 9PM",
+            "phone": "514-555-6666",
+            "email": "rosemont@pourdecitions.masson",
+            "address": "2225 Rue Masson, Montreal, QC"
+        },
+        {
+            "name": "Downtown Spirits",
+            "description": "Central location for spirits and cocktails.",
+            "point": {
+                "coordinates": "45.5017, -73.5673"
+            },
+            "categoryId": 1,
+            "time": "10AM - 11PM",
+            "phone": "514-666-7777",
+            "email": "downtown@pourdecitions.stcatherine",
+            "address": "1500 Rue Sainte-Catherine O, Montreal, QC"
+        },
+        {
+            "name": "Griffintown Brewhouse",
+            "description": "Modern brewery in Griffintown.",
+            "point": {
+                "coordinates": "45.490, -73.563"
+            },
+            "categoryId": 2,
+            "time": "3PM - 1AM",
+            "phone": "514-777-8888",
+            "email": "griffintown@pourdecitions.wellington",
+            "address": "1744 Rue Wellington, Montreal, QC"
+        },
+        {
+            "name": "Little Italy Wines",
+            "description": "Italian wines and aperitivo bar.",
+            "point": {
+                "coordinates": "45.535, -73.620"
+            },
+            "categoryId": 1,
+            "time": "12PM - 10PM",
+            "phone": "514-888-9999",
+            "email": "littleitaly@pourdecitions.stlaurent",
+            "address": "6865 Boulevard Saint-Laurent, Montreal, QC"
+        },
+        {
+            "name": "Verdun Craft Beer",
+            "description": "Craft beer and live music.",
+            "point": {
+                "coordinates": "45.450, -73.583"
+            },
+            "categoryId": 2,
+            "time": "4PM - 2AM",
+            "phone": "514-999-0000",
+            "email": "verdun@pourdecitions.wellington",
+            "address": "3824 Rue Wellington, Verdun, QC"
+        },
+        {
+            "name": "Mile End Spirits",
+            "description": "Boutique spirits in Mile End.",
+            "point": {
+                "coordinates": "45.520, -73.595"
+            },
+            "categoryId": 1,
+            "time": "2PM - 12AM",
+            "phone": "514-000-1111",
+            "email": "mileend@pourdecitions.stviateur",
+            "address": "56 Avenue Saint-Viateur O, Montreal, QC"
         }
     ]
 }

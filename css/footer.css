@@ -4,8 +4,6 @@
     margin-top: 20%;
 }
 
-
-
 .footer-top-space {
     padding: 70px;
 }
@@ -62,12 +60,10 @@
     margin: 0% 0% 2% 0%;
 }
 
-
-
-
 .footer-main-links {
     display: flex;
-    gap: 4%;
+    gap: 5%;
+   
 
 }
 
@@ -84,6 +80,7 @@
     color: white;
     text-decoration: none;
     padding-bottom: 1em;
+
 }
 
 .footer-form {
