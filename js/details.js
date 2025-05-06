@@ -1,5 +1,6 @@
 import { fetchData } from "./modules/fetch.js";
 import { observer } from "./modules/animationOnScroll.js";
+import { fetchDrinksFromLocalJSON } from "./modules/itemListing.js";
 
 document.addEventListener('DOMContentLoaded', loadDrinkDetails);
 
@@ -28,7 +29,14 @@ async function loadDrinkDetails() {
         // Add event listener to the Add to Cart button
         const cartButton = document.querySelector('.cart-button');
         if (cartButton) {
-            cartButton.addEventListener('click', () => addToCart(drink));
+            cartButton.addEventListener('click', (event) => {
+                let cart = JSON.parse(sessionStorage.getItem("cart"));
+                if (cart == null) {
+                    cart = new Array(0);
+                }
+                cart.push(itemId);
+                sessionStorage.setItem('cart', JSON.stringify(cart));
+            });
         }
     } catch (err) {
         console.error("Failed to load drink:", err);
@@ -39,10 +47,14 @@ async function fetchDrinkById(id) {
     try {
         const numOfPages = 5;
         let AllDrinks = [];
+        const localDrinks = await fetchDrinksFromLocalJSON();
+        localDrinks.forEach(drink => {
+            AllDrinks.push(drink);
+        });
         for (let i = 1; i <= numOfPages; i++) {
             const resourceUri = `https://lcbostats.com/api/alcohol?page=${i}`;
             const data = await fetchData(resourceUri);
-            AllDrinks.push(...data);
+            AllDrinks.push(...data.data);
         }
         const drink = AllDrinks.find(d => d.permanent_id == id);
         console.log("All drinks loaded:", AllDrinks);

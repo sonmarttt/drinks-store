@@ -1,7 +1,7 @@
 import { fetchData } from "./modules/fetch.js";
 import { countFilters } from "./modules/filters.js";
 import { observer } from "./modules/animationOnScroll.js";
-import { initItems } from "./modules/itemListing.js";
+import { initItems, fetchDrinksFromLocalJSON } from "./modules/itemListing.js";
 import { initMapView } from "./modules/map.js";
 import { initCart } from "./modules/cart.js";
 
@@ -26,6 +26,11 @@ function initApp() {
 }
 
 async function fetchDrinks() {
+    const localDrinks = await fetchDrinksFromLocalJSON();
+    localDrinks.forEach(drink => {
+        drinks.push(drink);
+    });
+
     const numOfPages = 5;
     try {
         for (let i = 1; i <= numOfPages; i++) {
@@ -68,7 +73,7 @@ export function parseDrinks(drinks) {
             }
             cart.push(drinkId);
             sessionStorage.setItem('cart', JSON.stringify(cart));
-        })
+        });
     });
 }
 
