@@ -1,7 +1,7 @@
 import { fetchData } from "./modules/fetch.js";
 import { countFilters } from "./modules/filters.js";
 import { observer } from "./modules/animationOnScroll.js";
-import { initItems, fetchDrinksFromLocalJSON } from "./modules/itemListing.js";
+import { initItems, fetchDrinksFromLocalJSON, paginate } from "./modules/itemListing.js";
 import { initMapView } from "./modules/map.js";
 import { initCart } from "./modules/cart.js";
 
@@ -17,7 +17,7 @@ function initApp() {
     
     if (page === "items") {
         fetchDrinks();
-        initItems();
+        initItems(drinks);
     } else if (page === "map") {
         initMapView();
     } else if (page === "shopping-cart") {
@@ -42,7 +42,7 @@ async function fetchDrinks() {
         } 
         sessionStorage.setItem('drinks', JSON.stringify(drinks));
         countFilters(drinks);
-        parseDrinks(drinks);
+        paginate(drinks);
         console.log(drinks);
     } catch (error) {
         console.log(`An error has occurred while fetching the data. ${error.message}`);

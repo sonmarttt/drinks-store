@@ -197,6 +197,14 @@ body::after{
     background-color: rgb(53, 52, 52);
 }
 
+/* Page Controls Styling */
+
+.page-control {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 /* Price Slider Styling */
 
 #price-filter {

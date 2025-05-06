@@ -1,6 +1,6 @@
 // A module for searching drinks from the list of drinks
 
-import { parseDrinks } from "../app.js";
+import { paginate } from "./itemListing.js";
 
 export function search(input, drinks) {
     const itemListing = document.getElementById("item-listing");
@@ -17,9 +17,9 @@ export function search(input, drinks) {
     });
     if (searchData.length != 0) {
         itemListing.innerHTML = "";
-        parseDrinks(searchData);
+        paginate(searchData);
     } else {
         itemListing.innerHTML = "";
-        parseDrinks(drinks);
+        paginate(drinks);
     }
 }
