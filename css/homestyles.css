@@ -1,16 +1,17 @@
 /* Home Page Styling */
 
-  body::after{
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 190vh;
-      background: linear-gradient(to top, rgb(63, 38, 35), transparent);
-      z-index: -1; 
-      pointer-events: none;
-  }
+body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 190vh;
+    background: linear-gradient(to top, rgb(63, 38, 35), transparent);
+    z-index: -1;
+    pointer-events: none;
+}
+
 .home-title {
     font-size: 5rem;
     color: white;
@@ -29,7 +30,7 @@
 .home-about-us {
     margin-left: 5%;
     grid-template-columns: 1fr 1fr;
- 
+
     width: 40%;
     margin-right: 5%;
 }
@@ -79,13 +80,14 @@
     object-fit: cover;
 
 }
-.title-image-wrapper{
+
+.title-image-wrapper {
     display: flex;
     width: 100%;
-    margin-top:15%
+    margin-top: 15%
 }
 
-.cocktail-title{
+.cocktail-title {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -101,6 +103,7 @@
     font-family: Old Standard TT;
     padding-bottom: 10%;
 }
+
 .image3 {
     margin-left: 2%;
 
@@ -140,21 +143,34 @@
 .suggested-item {
     display: flex;
     flex-direction: column;
-    background-color: rgb(66, 66, 66);
+    background-color: rgba(80, 44, 44, 0.7);
+    animation: pulseBG 3s infinite alternate;
     border-radius: 5ch 5ch 0ch 5ch;
-    height: 40vh;
+    height: 50vh;
+    width: 230px;
     flex-grow: 1;
 }
-
+@keyframes pulseBG {
+    from {
+      background-color: rgba(80, 44, 44,0.7); /* 50% opacity */
+    }
+    to {
+      background-color: rgb(38, 21, 21);   /* 100% opacity */
+    }
+}
 .cocktail-image {
-    width: 100%;
-    height: 75%;
+    width: 180px;
+    height: 240px;
+    padding:20px;
+    border-radius: 40px;
+
 }
 
 .cocktail-name {
     color: white;
     text-align: center;
     font-family: old standard tt;
+    font-size: 1.5rem;
 }
 
 .new-arrivals-title {
@@ -256,3 +272,4 @@ h1 {
 .new-item:nth-child(4) {
     transition-delay: 600ms;
 }
+
