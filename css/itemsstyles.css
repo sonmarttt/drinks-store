@@ -13,17 +13,18 @@ body::after{
 
 .items-page {
     display: flex;
-    margin: 0 10%;
+    padding: 10vh 15vh 0 5vh;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .filter-side-bar {
     width: 20%;
-    padding: 1ch;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* ?Temporary until put the image instead */
-    margin-top: 10vh;
+    margin-top: 13vh;
 }
 
 .items {
@@ -79,7 +80,7 @@ body::after{
     background-image: url(../data/images/search.svg);
     background-repeat: no-repeat;
     background-position: 40% 50%;
-    margin: 5vh 30%;
+    margin: 0vh 50% 10vh 30%;
     width: 40%;
     height: 4vh;
     background-color: transparent;

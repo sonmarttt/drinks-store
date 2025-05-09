@@ -19,19 +19,31 @@ export function initItems(drinks) {
     typeBtn.addEventListener('click', showTypes);
     const input = document.getElementById("search-bar");
     input.addEventListener('keyup', (e) => {
-    if (e.key == "Enter") {
-        console.log("You pressed Enter");
-         search(input, drinks)
-    }
+        if (e.key == "Enter") {
+            console.log("You pressed Enter");
+            search(input, drinks)
+        }
     });
     fetchDrinksFromLocalJSON();
 }
 
 export function paginate(drinks) {
-    const numberOfPages = Math.ceil(drinks.length / 15);
-    const pageButtonSection = document.getElementById("pages");
+    // Separate drinks by source
+    const localDrinks = drinks.filter(drink => drink.dataSource === 'local');
+    const lcboDrinks = drinks.filter(drink => drink.dataSource === 'lcbo');
+    const breweryDrinks = drinks.filter(drink => drink.dataSource === 'brewery');
+    
+    console.log('Drinks by source:', {
+        local: localDrinks.length,
+        lcbo: lcboDrinks.length,
+        brewery: breweryDrinks.length
+    });
 
+    // Fixed number of pages: 1 for local + 5 for LCBO + 5 for brewery
+    const numberOfPages = 11;
+    const pageButtonSection = document.getElementById("pages");
     pageButtonSection.innerHTML = "";
+
     for (let i = 1; i <= numberOfPages; i++ ) {
         const pageButton = createCustomElement(pageButtonSection, 'button', `${i}`);
         pageButton.setAttribute('data-page-number', i);
@@ -39,7 +51,7 @@ export function paginate(drinks) {
             const pageNumber = event.target.dataset.pageNumber;
             currentPage = pageNumber;
             checkCurrentPage(numberOfPages);
-            loadDrinkForPage(pageNumber, drinks);
+            loadDrinkForPage(pageNumber, localDrinks, lcboDrinks, breweryDrinks);
         });
     }
     
@@ -47,28 +59,66 @@ export function paginate(drinks) {
     previousButton.disabled = true;
     const nextButton = document.getElementById('next-button');
 
-    loadDrinkForPage(currentPage, drinks);
+    loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks);
 
     previousButton.addEventListener('click', () => {
         currentPage--;
         checkCurrentPage(numberOfPages);
-        loadDrinkForPage(currentPage, drinks);
+        loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks);
     });
     nextButton.addEventListener('click', () => {
         currentPage++;
         checkCurrentPage(numberOfPages);
-        loadDrinkForPage(currentPage, drinks);
+        loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks);
     });
 }
 
-function loadDrinkForPage(currentPage, drinks) {
+function loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks) {
     const itemListing = document.getElementById('item-listing');
-    const drinksInThisPage = new Array(0);
-    for (let i = (currentPage - 1) * 15; i < currentPage * 15; i++) {
-        drinksInThisPage.push(drinks[i]);
-    }
     itemListing.innerHTML = "";
-    parseDrinks(drinksInThisPage);
+    
+    let drinksToShow;
+    
+    if (currentPage === 1) {
+        // Page 1: Show all local drinks
+        drinksToShow = localDrinks;
+        console.log('Page 1 - Local drinks:', {
+            total: drinksToShow.length,
+            firstDrink: drinksToShow[0]?.title || 'No drinks'
+        });
+    } else if (currentPage >= 2 && currentPage <= 6) {
+        // Pages 2-6: Show LCBO drinks
+        const startIndex = (currentPage - 2) * 15;
+        const endIndex = startIndex + 15;
+        drinksToShow = lcboDrinks.slice(startIndex, endIndex);
+        console.log(`Page ${currentPage} - LCBO drinks:`, {
+            startIndex,
+            endIndex,
+            total: drinksToShow.length,
+            firstDrink: drinksToShow[0]?.title || 'No drinks'
+        });
+    } else {
+        // Pages 7-11: Show brewery drinks
+        const startIndex = (currentPage - 7) * 15;
+        const endIndex = startIndex + 15;
+        drinksToShow = breweryDrinks.slice(startIndex, endIndex);
+        console.log(`Page ${currentPage} - Brewery drinks:`, {
+            startIndex,
+            endIndex,
+            total: drinksToShow.length,
+            firstDrink: drinksToShow[0]?.name || 'No drinks'
+        });
+    }
+    
+    if (drinksToShow.length === 0) {
+        console.warn(`No drinks to show for page ${currentPage}`);
+        const noDrinksMessage = document.createElement('p');
+        noDrinksMessage.textContent = 'No drinks available for this page';
+        itemListing.appendChild(noDrinksMessage);
+        return;
+    }
+    
+    parseDrinks(drinksToShow);
 }
 
 function checkCurrentPage(numberOfPages) {
@@ -105,7 +155,8 @@ export async function fetchDrinksFromLocalJSON() {
             review: product.review,
             out_of_stock: product.out_of_stock,
             quantityInStock: product.quantityInStock,
-            image_url: product.image
+            image_url: product.image,
+            dataSource: 'local'
         }
         drinks.push(drink);
     });
