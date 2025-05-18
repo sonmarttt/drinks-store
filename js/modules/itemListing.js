@@ -2,7 +2,7 @@ import { search } from "./search.js";
 import { showBrands, showCountries, showTypes, showPriceFilter, showDegreeFilter } from "./filters.js";
 import { fetchData } from "./fetch.js";
 import { createCustomElement } from "../app.js";
-import { parseDrinks } from "../app.js";
+import { parseAllDrinks } from "../app.js";
 
 export let currentPage = 1;
 
@@ -118,7 +118,7 @@ function loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks) {
         return;
     }
     
-    parseDrinks(drinksToShow);
+    parseAllDrinks(drinksToShow);
 }
 
 function checkCurrentPage(numberOfPages) {

@@ -132,7 +132,16 @@ export function parseDrinksDetail(drink) {
 
 function createDetailElement(parent, label, value) {
     const detailElement = document.createElement('p');
-    detailElement.className = 'details';
-    detailElement.innerHTML = `${label} <br>${value}`;
+    detailElement.className = 'detail-container';
+    const labelP = document.createElement('p');
+    labelP.className = 'detail-label';
+    labelP.textContent = label;
+
+    const valueP = document.createElement('p');
+    valueP.className = 'detail-value';
+    valueP.textContent = value;
+
+    detailElement.appendChild(labelP);
+    detailElement.appendChild(valueP);
     parent.appendChild(detailElement);
 }

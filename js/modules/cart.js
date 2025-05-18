@@ -99,7 +99,7 @@ function parseCartItems(cartItems) {
             getCartItems(drinks);
         });
         const div2211 = createCustomElement(div221, 'div', '');
-        const quantityLabel = createCustomElement(div2211, 'p', 'Quantity:');
+        const quantityLabel = createCustomElement(div2211, 'p', 'Quantity');
         const quantity = createCustomElement(div2211, 'p', `${item.quantity}`);
         const plus = createCustomElement(div221, 'p', '+');
         plus.setAttribute('data-drink-id', item.permanent_id);
