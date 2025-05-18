@@ -17,8 +17,9 @@ function initApp() {
     
     if (page === "items") {
         loadAllDrinkData();
- 
-        initItems(drinks);
+        console.log("All the drinks");
+        console.log(drinks);
+        
     } else if (page === "map") {
         initMapView();
     } else if (page === "shopping-cart") {
@@ -58,6 +59,8 @@ async function loadAllDrinkData() {
         
         // Initialize pagination after all data is loaded
         paginate(drinks);
+
+        initItems(localDrinks);
         
         console.log('Final drinks array:', drinks.map(d => d.dataSource));
     } catch (error) {
@@ -107,6 +110,16 @@ export function parseLcboItem(drinks) {
         const drinkPrice = createCustomElement(item, 'h1', `${USDollar.format(drink.price)}`);
         const cartButton = createCustomElement(item, 'button', 'Add to Cart');
         cartButton.setAttribute('data-drink-id', drink.permanent_id);
+        const modal = document.getElementById('myModal');
+        const span = document.getElementsByClassName('close')[0];
+        span.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
         cartButton.addEventListener('click', (event) => {
             const drinkId = event.target.dataset.drinkId;
             let cart = JSON.parse(sessionStorage.getItem("cart"));
@@ -115,6 +128,7 @@ export function parseLcboItem(drinks) {
             }
             cart.push(drinkId);
             sessionStorage.setItem('cart', JSON.stringify(cart));
+            modal.style.display = "block";
         });
     });
 }

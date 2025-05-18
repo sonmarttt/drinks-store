@@ -3,6 +3,8 @@ import { createCustomElement } from "../app.js";
 export function initCart() {
     const drinks = JSON.parse(sessionStorage.getItem('drinks'));
     getCartItems(drinks);
+
+    
 }
 
 function getCartItems(drinks) {
@@ -22,6 +24,10 @@ function getCartItems(drinks) {
     });
     parseCartItems(cartItems);
     calcTotal(cartItems);
+    const storeDelivery = document.getElementById('store');
+    const homeDelivery = document.getElementById('home');
+    storeDelivery.addEventListener('change', () => calcTotal(cartItems));
+    homeDelivery.addEventListener('change', () => calcTotal(cartItems));
 }
 
 function calcTotal(cartItems) {
@@ -33,8 +39,12 @@ function calcTotal(cartItems) {
     const productSubtotalTxt = document.getElementById('product-subtotal');
     const taxesTxt = document.getElementById('taxes');
     const totalTxt = document.getElementById('total');
+    const storeDelivery = document.getElementById('store');
+    const homeDelivery = document.getElementById('home');
+
     let productSubtotal = 0;
     let taxes = 0;
+    let delivery = 0;
     let total = 0;
 
     cartItems.forEach(item => {
@@ -42,8 +52,34 @@ function calcTotal(cartItems) {
         productSubtotal += productTotal;
     });
 
+    if (storeDelivery.checked) {
+        delivery = 4;
+    } else if (homeDelivery.checked) {
+        delivery = 2;
+    }
+
+    const deliveryLabel = document.getElementById('deliveryLabel');
+    const storeDeliveryDiv = document.getElementById('storeDelivery');
+    const homeDeliveryDiv = document.getElementById('homeDelivery');
+    const br1 = document.getElementById('br1');
+    const br2 = document.getElementById('br2');
+    if (productSubtotal > 70) {
+        deliveryLabel.style.display = "none";
+        storeDeliveryDiv.style.display = "none";
+        homeDeliveryDiv.style.display = "none";
+        br1.style.display = "none";
+        br2.style.display = "none";
+        delivery = 0;
+    } else {
+        deliveryLabel.style.display = "flex";
+        storeDeliveryDiv.style.display = "flex";
+        homeDeliveryDiv.style.display = "flex";
+        br1.removeAttribute("style");
+        br2.removeAttribute("style");
+    }
+
     taxes = productSubtotal * 0.1495;
-    total = productSubtotal + taxes;
+    total = productSubtotal + taxes + delivery;
     productSubtotalTxt.textContent = `${USDollar.format(productSubtotal)}`;
     taxesTxt.textContent = `${USDollar.format(taxes)}`;
     totalTxt.textContent = `${USDollar.format(total)}`;
@@ -63,7 +99,7 @@ function parseCartItems(cartItems) {
         div1.classList.add('div1');
         const drinkImage = createCustomElement(div1, 'img', '');
         drinkImage.src = item.image_url;
-        const stock = createCustomElement(div1, 'p', "In Stock");
+        const stock = createCustomElement(div1, 'p', `In Stock: ${item.out_of_stock ? "No" : "Yes"} `);
         const priceLabel = createCustomElement(div1, 'p', "Price:");
         const price = createCustomElement(div1, 'p', `${USDollar.format(item.price)}`);
 
@@ -72,9 +108,16 @@ function parseCartItems(cartItems) {
 
         const div21 = createCustomElement(div2, 'div', '');
         const drinkName = createCustomElement(div21, 'h1', `${item.title}`);
+        drinkName.setAttribute('drink-name-data', item.id);
+        drinkName.addEventListener('click', (event) => {
+            //drink value of the drink-name-data attribute
+            const drinkId=event.target.getAttribute('drink-name-data');
+            //redirect to the item-detail.html page
+            window.location.href = `item-detail.html?id=${item.permanent_id}`;
+        });
         const drinkInfo = createCustomElement(div21, 'p', `${item.subcategory} | ${item.volume}ml | ${item.alcohol_content}%`);
         const drinkCountry = createCustomElement(div21, 'p', `${item.country}`);
-        const drinkBrand = createCustomElement(div21, 'p', `${item.brand}`);
+        const drinkBrand = createCustomElement(div21, 'p', `${item.brand || "N/A"}`);
 
         const div22 = createCustomElement(div2, 'div', '');
         div22.classList.add('quantity-div');

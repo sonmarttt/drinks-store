@@ -19,10 +19,7 @@ export function initItems(drinks) {
     typeBtn.addEventListener('click', showTypes);
     const input = document.getElementById("search-bar");
     input.addEventListener('keyup', (e) => {
-        if (e.key == "Enter") {
-            console.log("You pressed Enter");
-            search(input, drinks)
-        }
+        search(input, drinks);
     });
     fetchDrinksFromLocalJSON();
 }
@@ -79,7 +76,7 @@ function loadDrinkForPage(currentPage, localDrinks, lcboDrinks, breweryDrinks) {
     
     let drinksToShow;
     
-    if (currentPage === 1) {
+    if (currentPage == 1) {
         // Page 1: Show all local drinks
         drinksToShow = localDrinks;
         console.log('Page 1 - Local drinks:', {

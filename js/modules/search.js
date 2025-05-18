@@ -3,6 +3,8 @@
 import { paginate } from "./itemListing.js";
 
 export function search(input, drinks) {
+    console.log(drinks);
+    const pageControl = document.getElementById('page-control');
     const itemListing = document.getElementById("item-listing");
     const searchData = new Array(0);
     const search = input.value;
@@ -15,11 +17,13 @@ export function search(input, drinks) {
             searchData.push(drink);
         }
     });
-    if (searchData.length != 0) {
+    if (search.length != 0) {
         itemListing.innerHTML = "";
         paginate(searchData);
+        pageControl.style.display = "none";
     } else {
         itemListing.innerHTML = "";
         paginate(drinks);
+        pageControl.removeAttribute("style");
     }
 }

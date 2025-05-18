@@ -26,6 +26,17 @@ async function loadDrinkDetails() {
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((element) => observer.observe(element));
 
+        const modal = document.getElementById('myModal');
+        const span = document.getElementsByClassName('close')[0];
+        span.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
         // Add event listener to the Add to Cart button
         const cartButton = document.querySelector('.cart-button');
         if (cartButton) {
@@ -36,6 +47,7 @@ async function loadDrinkDetails() {
                 }
                 cart.push(itemId);
                 sessionStorage.setItem('cart', JSON.stringify(cart));
+                modal.style.display = "block";
             });
         }
     } catch (err) {
@@ -106,7 +118,7 @@ export function parseDrinksInfo(drink) {
 
     const stock = document.querySelector(".stock");
     if (stock) {
-        stock.textContent = `Stock: ${drink.out_of_stock|| 'Unknown'} `;
+        stock.textContent = `In Stock: ${drink.out_of_stock ? "No" : "Yes"} `;
     }
 }
 
