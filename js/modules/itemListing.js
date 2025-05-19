@@ -1,5 +1,5 @@
 import { search } from "./search.js";
-import { showBrands, showCountries, showTypes, showPriceFilter, showDegreeFilter } from "./filters.js";
+import { showBrands, showCountries, showTypes, showPriceFilter, showDegreeFilter, getFilters } from "./filters.js";
 import { fetchData } from "./fetch.js";
 import { createCustomElement } from "../app.js";
 import { parseAllDrinks } from "../app.js";
@@ -22,6 +22,7 @@ export function initItems(drinks) {
         search(input, drinks);
     });
     fetchDrinksFromLocalJSON();
+    getFilters();
 }
 
 export function paginate(drinks) {

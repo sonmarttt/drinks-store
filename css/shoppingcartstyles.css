@@ -130,6 +130,11 @@ main {
     
 }
 
+.out-of-stock {
+    border: 4px solid rgb(179, 21, 21);
+    background-color: rgb(53, 51, 51);
+}
+
 .drink-container > div > img {
     width: 80%;
     height: 60%;

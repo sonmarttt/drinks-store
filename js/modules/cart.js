@@ -3,8 +3,6 @@ import { createCustomElement } from "../app.js";
 export function initCart() {
     const drinks = JSON.parse(sessionStorage.getItem('drinks'));
     getCartItems(drinks);
-
-    
 }
 
 function getCartItems(drinks) {
@@ -48,8 +46,10 @@ function calcTotal(cartItems) {
     let total = 0;
 
     cartItems.forEach(item => {
-        const productTotal = item.price * item.quantity;
-        productSubtotal += productTotal;
+        if (!item.out_of_stock) {
+            const productTotal = item.price * item.quantity;
+            productSubtotal += productTotal;
+        }
     });
 
     if (storeDelivery.checked) {
@@ -95,6 +95,9 @@ function parseCartItems(cartItems) {
     cartItems.forEach(item => {
         const itemContainer = createCustomElement(cartDiv, 'div', '');
         itemContainer.classList.add("drink-container");
+        if (item.out_of_stock) {
+            itemContainer.classList.add("out-of-stock");
+        }
         const div1 = createCustomElement(itemContainer, 'div', '');
         div1.classList.add('div1');
         const drinkImage = createCustomElement(div1, 'img', '');
