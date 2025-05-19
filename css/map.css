@@ -1,33 +1,72 @@
-body::after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70vh;
-    background: linear-gradient(to top, rgb(63, 38, 35), transparent);
-    z-index: -1; 
-    pointer-events: none;
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  background: linear-gradient(to top, rgb(63, 38, 35), transparent);
+  z-index: -1;
+  pointer-events: none;
 }
 
-  #leaflet-map {
-    border-radius: 0px 20px 20px 0px;
-  }
-  
-  .container {
-    max-width: 100vw;
-    padding: 10ch 4vh 4ch 4ch;
-  }
-  
-  #location-list {
-    background: rgba(28, 11, 1, 0.95);
-    color: #fff;
-    padding: 2rem 1rem;
-    border-radius: 20px 0 0 20px;
-    overflow-y: auto;
-    font-family: 'Text Me One', sans-serif;
-  }
-  a:hover {
-    color: rgb(124, 118, 109);
-    transition: 0.3s;
+#leaflet-map {
+  border-radius: 0px 20px 20px 0px;
+}
+
+.container {
+  max-width: 100vw;
+  padding: 10ch 4vh 4ch 4ch;
+}
+
+#location-list {
+  background: rgba(28, 11, 1, 0.95);
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 20px 0 0 20px;
+  overflow-y: auto;
+  font-family: 'Text Me One', sans-serif;
+}
+
+a:hover {
+  color: rgb(124, 118, 109);
+  transition: 0.3s;
+}
+
+.location-item {
+  font-family: old standard tt;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+.location-name {
+  display: block;             
+  max-height: 2em;            
+  overflow: hidden;            
+  text-overflow: ellipsis;    
+  white-space: normal;         
+  line-height: 1.2em;  
+}
+
+.location-details {
+  display: none;
+  margin-top: 8px;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius: 10px;
+  color: #e3c8c8;
+  font-family: text me one;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 -20px 20px -20px rgba(0, 0, 0, 0.5);
+  ;
+}
+.location-details p {
+  margin: 0;
+  padding: 3px 0;
+}
+.location-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(239, 183, 183, 0.3);
 }

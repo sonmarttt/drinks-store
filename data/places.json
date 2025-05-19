@@ -4,13 +4,13 @@
             "id": 1,
             "name": "Winery",
             "description": "Wineries",
-            "markerIcon": "data/markers/winebar.png"
+            "markerIcon": "data/markers/liquor.png"
         },
         {
             "id": 2,
             "name": "Brewery",
             "description": "Breweries",
-            "markerIcon": "data/markers/beergarden.png"
+            "markerIcon": "data/markers/bar_coktail.png"
         }
     ],
     "places": [

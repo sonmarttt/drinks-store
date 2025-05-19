@@ -8,8 +8,7 @@ import { createCustomElement } from "../app.js";
 export function initMapView() {
     console.log("Initializing the map");
 
-    // 1) Create an Instance of the leaflet map, and set the initial view to a city of your choice
-    // 45.508888, -73.561668
+    // 1) Create an Instance of the leaflet map, and set the initial view to Montreal
     const map = L.map('leaflet-map').setView(
         [45.508888, -73.561668]
         , 12
@@ -21,29 +20,13 @@ export function initMapView() {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    // 3) Creating a market and placing it on the map
-    const marker = L.marker([45.49855290197278, -73.62444023643327]).addTo(map);
-    // 45.49855290197278, -73.62444023643327
-
-    // 4) Adding an info window (popup) to a marker
-    const placeInfo = `<h6>Starbucks Coffe</h6>
-        <p>The description goes here </p>
-        <p>1234 St-croix A1B 2C3</p>
-    `;
-    marker.bindPopup(placeInfo).openPopup();
-
-    // 5) Use the fetch module to load the content of the places.json
-    // 5.a) loop through it and for each place create and place a marker on the map.
-    // .places []
-    // URI to be used: data/places.json
-
+    // 3) Load and display locations
     const locations = fetchLocation(map);
 }
 
 async function fetchLocation(map) {
     const resourceUri = "../../data/places.json";
     const locations = await fetchData(resourceUri);
-    //console.log(locations);
     parseLocations(locations, map);
     return locations;
 }
@@ -52,22 +35,43 @@ function parseLocations(locations, map) {
     console.log(locations);
     const locationList = document.getElementById("location-list");
     const list = createCustomElement(locationList, "ul", '');
+    
     locations.places.forEach(location => {
-        const li = createCustomElement(list, 'li', location.name);
+        // Create list item with hover functionality
+        const li = createCustomElement(list, 'li', '');
+        li.innerHTML = `
+            <div class="location-item">
+                <span class="location-name">${location.name}</span>
+                <div class="location-details" style="display: none;">
+                    <p>Description: ${location.description}</p>
+                    <p>Address: ${location.address}</p>
+                    <p>Hours: ${location.time}</p>
+                    <p>Phone: ${location.phone}</p>
+                    <p>Email: ${location.email}</p>
+                </div>
+            </div>
+        `;
 
-        // 5) adding the custom marker.
-        // For the current place, we need to find the matching category (search by ID in the categories array)
+        // Add hover event listeners
+        li.addEventListener('mouseenter', () => {
+            li.querySelector('.location-details').style.display = 'block';
+        });
+        li.addEventListener('mouseleave', () => {
+            li.querySelector('.location-details').style.display = 'none';
+        });
+
+        // Find the matching category for the custom marker
         const category = locations.categories.find(
             category => category.id === location.categoryId 
-            );
-            console.log(category);
-        const customMarker = L.icon ({
+        );
+        
+        const customMarker = L.icon({
             iconUrl: category.markerIcon,
-            iconSize:     [70, 70], // size of the icon
-            shadowSize:   [50, 64], // size of the shadow
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            shadowAnchor: [4, 62],  // the same for the shadow
-            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            iconSize: [70, 70],
+            shadowSize: [50, 64],
+            iconAnchor: [22, 94],
+            shadowAnchor: [4, 62],
+            popupAnchor: [-3, -76]
         });
 
         const marker = L.marker(location.point.coordinates.split(','), {icon: customMarker}).addTo(map);
