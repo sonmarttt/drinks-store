@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-page="signup">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    
     <link rel="stylesheet" href="css/signupstyles.css">
     <link rel="stylesheet" href="css/styles.css">
-    
+
+   
+
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -18,24 +23,29 @@
                 </div>
                 <div class="main-links">
                     <a class="nav-link nav-button1" href="index.html">Home</a>
-                    <a class="nav-link nav-button1"
-                        href="contact-us.html">Contact Us</a>
+                    <a class="nav-link nav-button1" href="contact-us.html">Contact Us</a>
                     <a class="nav-link nav-button1" href="items.html">Items</a>
-                    <a class="nav-link nav-button1"
-                        href="shopping-cart.html">Shopping Cart</a>
+                    <a class="nav-link nav-button1" href="shopping-cart.html">Shopping Cart</a>
                     <a class="nav-link nav-button1" href="faq.html">FAQ</a>
                     <a class="nav-link nav-button1" href="map.html">Map</a>
                 </div>
-               
+
             </nav>
         </header>
         <div class="login-div">
             <div class="login-page">
-                <form>
+
+
+
+                <form action="" id="frmRegistration">
                     <div class="login-signup-nav">
-                        <a href="login.html"><h1>Login</h1></a>
+                        <a href="login.html">
+                            <h1>Login</h1>
+                        </a>
                         <h1> / </h1>
-                        <a id="currentPage" href="signup.html"><h1>Sign Up</h1></a>
+                        <a id="currentPage" href="signup.html">
+                            <h1>Sign Up</h1>
+                        </a>
                     </div>
                     <hr class="login-hr">
 
@@ -85,19 +95,37 @@
                             <label for="phone" class="login-label">Phone</label>
                         </div>
                         <div class="form-group inputbox">
-                            <input type="text" id="dob" name="dob" required class="login-input">
+                            <input type="date" id="dob" name="dob" required class="login-input">
                             <label for="dob" class="login-label">Date of Birth</label>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group inputbox">
-                            <input type="text" id="country" name="country" required class="login-input">
+                            <select id="country" name="country" required class="login-input">
+                                <option value="" disabled selected hidden></option>
+                                <option value="CA">Canada</option>
+                            </select>
                             <label for="country" class="login-label">Country</label>
                         </div>
                         <div class="form-group inputbox">
-                            <input type="text" id="region" name="region" required class="login-input">
-                            <label for="region" class="login-label">Region / Province</label>
+                            <select id="region" name="region" required class="login-input">
+                                <option value="" disabled selected hidden></option>
+                                <option value="AB">Alberta</option>
+                                <option value="BC">British Columbia</option>
+                                <option value="MB">Manitoba</option>
+                                <option value="NB">New Brunswick</option>
+                                <option value="NL">Newfoundland and Labrador</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="ON">Ontario</option>
+                                <option value="PE">Prince Edward Island</option>
+                                <option value="QC">Quebec</option>
+                                <option value="SK">Saskatchewan</option>
+                                <option value="NT">Northwest Territories</option>
+                                <option value="NU">Nunavut</option>
+                                <option value="YT">Yukon</option>
+                            </select>
+                            <label for="region" class="login-label">Province</label>
                         </div>
                     </div>
 
@@ -111,11 +139,51 @@
                             <label for="postal-code" class="login-label">Postal Code</label>
                         </div>
                     </div>
-
-                    <button type="submit">Sign Up</button>
+                    <div class="buttons">
+                        <button type="reset">Clear</button>
+                        <button type="submit">Sign Up</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+    
+    <script src="js/validation.js"></script>
+    <!-- since the date input has automatic placeholder, i have to get rid of it then add it once the field is filled -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const dateInput = document.querySelector('input[type="date"]');
+        
+          function toggleEmptyClass() {
+            if (!dateInput.value) {
+              dateInput.classList.add('empty');
+            } else {
+              dateInput.classList.remove('empty');
+            }
+          }
+        
+          // Initial check
+          toggleEmptyClass();
+        
+          // Listen for input changes
+          dateInput.addEventListener('input', toggleEmptyClass);
+        });
+        </script>
+         <script type="module">
+            import { BackgroundSlider } from './js/modules/backgroundImage.js';
+        
+            const images = [
+                'data/images/login2.jpg',
+                'data/images/login1.jpg',
+                'data/images/login9.jpg',
+                'data/images/login4.jpg',
+                'data/images/login5.jpg',
+    
+            ];
+        
+            BackgroundSlider(images, 3000);
+     // 3 seconds interval
+        </script>
 </body>
+
 </html>

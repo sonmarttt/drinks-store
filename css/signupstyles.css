@@ -1,13 +1,15 @@
-body{
-    background-image: url("../data/images/loginmain.jpg");  
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+body {
+    background-size: 800px auto; 
+    background-position: left bottom; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    transition: background-image 1s ease-in-out;
 }
-.container{
-    padding-bottom:40px;
+.container {
+    padding-bottom: 40px;
 }
-.login-div{
+
+.login-div {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -19,22 +21,21 @@ body{
 
 .login-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 2ch 5ch 5ch 5ch;
     width: 45%;
-    
     border-radius: 20px;
     position: relative;
     background-color: transparent;
     backdrop-filter: blur(55px);
-    border:2px solid rgb(243, 218, 193);
+    border: 2px solid rgb(243, 218, 193);
 }
 
 .login-signup-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .login-signup-nav a {
@@ -43,12 +44,8 @@ body{
     color: white;
 }
 
-.login-signup-nav a:hover {
-    color: rgb(231, 225, 225);
-    transition: 0.5s;
-}
 
-.inputbox{
+.inputbox {
     position: relative;
     margin: 20px 0;
     max-width: 300px;
@@ -67,12 +64,13 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-input:focus ~ label, 
-input.filled ~ label {
-   top: 10px;
+.login-input:focus ~ label, 
+.login-input.filled ~ label {
+   top: -5px;
    left: 0px;
    font-size: 12px;
 }
+
 .login-input {
     width: 100%;
     height: 50px;
@@ -82,9 +80,11 @@ input.filled ~ label {
     font-size: 1.2rem;
     padding: 0 35px 0 5px;
     color: #ffffff;
+    font-family:text me one;
 }
-#address{
-    width: 150%;
+
+#address {
+    width: 100%;
 }
 
 h1 {
@@ -94,14 +94,14 @@ h1 {
 
 label {
     color: white;
-    font-family: Text-Me-One, sans-serif;
+    font-family: 'Text-Me-One';
     font-size: small;
 }
 
 button {
     width: 100%;
     height: 40px;
-    border-radius: 40px;
+    border-radius: 40px !important;
     background-color: rgb(255, 255, 255, 1);
     border: none;
     outline: none;
@@ -111,20 +111,75 @@ button {
     transition: all 0.4s ease;
     margin-top: 20px;
 }
-
+option{
+    font-family: text me one;
+}
 button:hover {
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(233, 200, 200, 0.5);
 }
 
 .form-row {
-  display: flex;
-  gap: 8ch;
-  justify-content: space-between;
+    display: flex;
+    gap: 8ch;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .form-group {
-  flex: 1;
-  min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
+.buttons {
+    display: flex;
+    gap: 5vh;
+    width: 100%;
+
+}
+
+#frmRegistration {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-hr {
+    width: 100%;
+    color: white;
+    margin: 20px 0;
+}
+
+/* Fix for modal */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+.modal-header .btn-close {
+    opacity: 1;
+}
+
+input[type="date"].empty::-webkit-datetime-edit-text,
+input[type="date"].empty::-webkit-datetime-edit-month-field,
+input[type="date"].empty::-webkit-datetime-edit-day-field,
+input[type="date"].empty::-webkit-datetime-edit-year-field {
+    color: transparent;
+    pointer-events: none;
+}
+
+
+select.login-input {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-family:text me one;
+}
+
+select.login-input option {
+    background-color: rgb(63, 38, 35);
+    color: white;
+}
+
+ 
  

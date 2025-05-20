@@ -190,10 +190,12 @@ body::after {
 .new-item {
     display: flex;
     flex-direction: column;
+    background-color: rgba(80, 44, 44, 0.7);
+    animation: pulseBG 3s infinite alternate;
+    border-radius: 5ch 5ch 0ch 5ch;
+    height: 50vh;
+    width: 230px;
     flex-grow: 1;
-    background-color: rgb(73, 73, 73);
-    border-radius: 5ch;
-    height: 40vh;
 }
 
 h1 {

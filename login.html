@@ -27,40 +27,55 @@
                 </div>
             </nav>
         </header>
+    </div>
+    <div class="login-div">
+        <div class="login-page">
+            <form>
+                <div class="login-signup-nav">
+                    <a id="currentPage" href="login.html">
+                        <h1>Login</h1>
+                    </a>
+                    <h1> / </h1>
+                    <a href="signup.html">
+                        <h1>Sign Up</h1>
+                    </a>
+                </div>
+                <hr class="login-hr">
+                <div id="alert-message" class="alert-message"></div>
+                <div class="inputbox">
+                    <input type="email" id="email" name="email" required
+                        class="login-input">
+                    <label for="email" class="login-label">Email:</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" id="password" name="password"
+                        required class="login-input">
+                    <label for="password"
+                        class="login-label">Password:</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="#">Forget Password</a>
+                </div>
+                <button>Log in</button>
+            </form>
         </div>
-        <div class="login-div">
-            
-            <div class="login-page">
-                <form>
-                    <div class="login-signup-nav">
-                        <a id="currentPage" href="login.html">
-                            <h1>Login</h1>
-                        </a>
-                        <h1> / </h1>
-                        <a href="signup.html">
-                            <h1>Sign Up</h1>
-                        </a>
-                    </div>
-                    <hr class="login-hr">
-                    <div class="inputbox">
-                        <input type="email" id="email" name="email" required
-                            class="login-input">
-                        <label for="email" class="login-label">Email:</label>
-                    </div>
-                    <div class="inputbox">
-                        <input type="password" id="password" name="password"
-                            required class="login-input">
-                        <label for="password"
-                            class="login-label">Password:</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me</label>
-                        <a href="#">Forget Password</a>
-                    </div>
-                    <button>Log in</button>
-                </form>
-            </div>
-        </div>
+    </div>
+    <script src="js/validation.js"></script>
+    <script type="module">
+        import { BackgroundSlider } from './js/modules/backgroundImage.js';
     
+        const images = [
+            'data/images/login2.jpg',
+            'data/images/login1.jpg',
+            'data/images/login9.jpg',
+            'data/images/login4.jpg',
+            'data/images/login5.jpg',
+
+        ];
+    
+        BackgroundSlider(images, 3000);
+ // 3 seconds interval
+    </script>
 </body>
 </html>
