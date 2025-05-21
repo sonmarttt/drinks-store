@@ -23,7 +23,7 @@ function initApp() {
        
     });
     
-    // Handle browser autofill by checking inputs after a short delay
+    //check browser autofill inputs after a short delay
     setTimeout(checkForAutofill, 500);
 }
 
@@ -56,7 +56,6 @@ function validateForm(event) {
     const city = document.querySelector("#city")?.value.trim();
     const postalCode = document.querySelector("#postal-code")?.value.trim();
     
-    // Required fields check
     if (!firstName || !lastName || !email || !confirmEmail || !password || !confirmPassword || !street || !phone || !dateOfBirth || !country || !region || !city || !postalCode) {
         alert("Please fill in all the required fields.");
         return false;

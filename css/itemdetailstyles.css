@@ -76,7 +76,7 @@ body::after {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 4.8rem; /* 2 lines of 2rem font size */
+    height: 4.8rem; 
     line-height: 2.4rem;
 }
 
@@ -127,7 +127,8 @@ body::after {
 }
 
 .detail-container {
-    margin-bottom: 5vh;
+    margin-bottom: 5vh; 
+    
 }
 
 .detail-container {
@@ -163,17 +164,15 @@ body::after {
     overflow: visible;
     text-overflow: clip;
     -webkit-line-clamp: unset;
-    height: auto; /* Allow height to expand */
+    height: auto; 
 }
 
-/* Remove incorrect styles */
+
 .drink-data .data:hover {
-    /* This rule is no longer needed */
-    /* Remove or comment out existing styles here */
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    height: 1.5rem; /* Restore original height if any */
+    height: 1.5rem; 
 }
 
 /* Modal styling */

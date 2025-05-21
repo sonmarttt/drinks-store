@@ -1,4 +1,4 @@
-
+//change the pictures for login and signup 
 export function BackgroundSlider(images, interval = 3000) {
     if (!Array.isArray(images) || images.length === 0) 
         return;

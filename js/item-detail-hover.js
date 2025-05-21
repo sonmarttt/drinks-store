@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', initItemDetailHover); 
 
+//used in the item-detail page to show the full description when you hover over it
 function initItemDetailHover() {
     const dataElements = document.querySelectorAll('.detail-value');
 

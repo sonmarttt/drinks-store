@@ -1,4 +1,4 @@
-// A module that add an animation when an element is visible in the screen
+// A module that adds an animation when an element is visible in the screen
 
 export const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
