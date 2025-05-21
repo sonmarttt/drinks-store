@@ -1,5 +1,5 @@
 body {
-    background-size: 800px auto; 
+    background-size: 900px auto; 
     background-position: left bottom; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
@@ -7,7 +7,7 @@ body {
 }
 
 .container{
-    padding-bottom:40px;
+    margin-bottom:10px;
 }
 .login-div{
     display: flex;
@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding: 2ch 5ch 5ch 5ch;
+    padding: 1ch 5ch 5ch 5ch;
     width: 20%;
     border-radius: 15px;
     position: relative;
@@ -43,12 +43,9 @@ body {
     padding: 0px 20px 0px 20px;
     text-decoration: none;
     color: white;
+    font-size:1.1em;
 }
 
-.login-signup-nav a:hover {
-    color: rgb(255, 195, 195);
-    transition: 0.5s;
-}
 
 .inputbox{
     position: relative;
@@ -116,7 +113,8 @@ label {
 .forget a {
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
+   font-family: text me one;
+   font-size:1em;
 }
 
 .forget a:hover {
@@ -154,4 +152,31 @@ button:hover {
   width: 100%;
 }
 
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1360px) and (max-height: 1370px) and (orientation: portrait) {
 
+.login-div{
+    padding-top:8vh;
+}
+.login-signup-nav a {
+    font-size:1.1em;
+}
+
+.login-page {
+    width: 30%;
+    padding: 3ch 8ch 8ch 8ch;
+}
+
+.login-page label {
+    font-size: 1.1rem;
+}
+
+.login-page .inputbox input {
+    font-size: 1.1rem;
+}
+
+.login-page .forget,
+.login-page .forget a {
+    font-size: 1.1rem;
+}
+
+}

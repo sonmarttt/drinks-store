@@ -1,7 +1,19 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
 .footer-container {
     position: relative;
     width: 100%;
     margin-top: 20%;
+    flex-shrink: 0;
 }
 
 .footer-top-space {
@@ -63,7 +75,7 @@
 .footer-main-links {
     display: flex;
     gap: 2vh;
-   
+
 
 }
 
@@ -138,7 +150,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 18vh;
-    padding-left: 4%;
+    margin-right: 2%;
 
 }
 
@@ -166,7 +178,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 6%;
+
 }
 
 .footer-info-item {
@@ -186,4 +198,44 @@
 
 #info-icons {
     font-size: 1.9rem;
+}
+
+/* iPad Pro Media Queries */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    
+    .footer-content {
+        padding: 2% 1.3%; 
+    }
+
+    .footer-header {
+        font-size: 1.5rem; 
+        letter-spacing: 5px;
+        width: fit-content;
+    }
+.footer-nav-link{
+    font-size:14px;
+}
+.footer-center{
+    padding-top:8vh;
+    margin-right:4vh;
+
+}
+.footer-right{
+    justify-content: flex-start;
+}
+    .footer-form-title {
+        font-size: 1.2rem; 
+    }
+
+    .footer-input {
+        max-width: 300px; 
+    }
+
+    .footer-floating-image{
+        width:25%;
+        height:auto;
+    }
+    .footer-top-space{
+        padding:60px;
+    }
 }

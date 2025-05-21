@@ -5,7 +5,7 @@ body::after{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 190vh;
+    height: 75%;
     background: linear-gradient(to top, rgb(63, 38, 35), transparent);
     z-index: -1; 
     pointer-events: none;
@@ -107,18 +107,19 @@ body::after{
     margin-bottom:8vh;
 }
 
-/* Brewery Item Specific Styles */
 .brewery-item {
     display: flex;
     flex-direction: column;
     background-color: rgb(73, 73, 73);
     border-radius: 3ch;
-    width: 35vh;
+    width: 80%;
+    flex-grow: 1;
     height: auto;
-    min-height: 40vh;
+    min-height: 200px;
     padding: 2rem;
     box-sizing: border-box;
     gap: 1rem;
+    margin: 0 auto 10px auto;
 }
 
 .brewery-name {
@@ -171,17 +172,23 @@ body::after{
     flex-direction: column;
     background-color: rgb(73, 73, 73);
     border-radius: 3ch;
-    width: 35vh;
-    height: 60vh;
-    padding: 7px;
+    width: 100%;
+    max-width: 230px;
+    min-width: 180px;
+    flex-grow: 1;
+    height: auto;
+    padding: 12px 8px 10px 8px;
     box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 #item-listing > div > img {
     align-self: center;
-    height: 50%;
-    width: 60%;
-    margin: 5% 0%;
+    height: auto;
+    max-height: 160px;
+    width: 48%;
+    margin: 3% 0 2% 0;
     border-radius: 3ch;
 }
 
@@ -220,9 +227,8 @@ body::after{
 #item-listing > div > h1 {
     color: white;
     font-family:text me one;
-    margin: 0;
-    margin-left: 2vh;
-    font-size:1.5em;
+    margin: 0 0 8px 6px;
+    text-align: left;
 }
 
 #item-listing > div > button {
@@ -233,10 +239,10 @@ body::after{
     margin-left: auto;
     margin-right: auto;
     width: 150px;
-    height: 50px;
-    margin-top: 12px;
-    margin-bottom:5px;
-    font-size: 1.2rem;
+    height: 42px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -376,17 +382,17 @@ input[type="range"] {
 /* Modal styling */
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
   
   /* Modal Content */
@@ -430,4 +436,49 @@ input[type="range"] {
 
 .show {
     opacity: 1;
+}
+
+
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1360px) and (max-height: 1370px) and (orientation: portrait) {
+
+   
+
+    .items-page {
+        padding-top: 10vh; 
+    }
+
+    #item-listing {
+        grid-template-columns: repeat(2, 1fr); 
+        column-gap: 2vw;
+    }
+
+    .filter-side-bar {
+        width: 25%; 
+        margin-left: 5vh;
+        margin-right: 2vh;
+    }
+
+    #search-bar {
+        height: 60%; 
+    }
+
+    #item-listing > div > h1 {
+        text-align: left;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin: 8px 0 8px 8px;
+    }
+    .brewery-item {
+        max-width: calc(90% - 10px);
+        min-width: 0;
+        min-height: 180px;
+        padding: 1.5rem;
+        margin: 0 10px 10px 10px;
+    }
+  #item-listing{
+    margin-bottom: 4vh;
+  }
+
+ 
+
 }

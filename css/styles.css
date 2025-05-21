@@ -6,11 +6,11 @@ body {
     margin: 0;
 }
 .home-nav {
-    padding-top:4ch;
+    padding-top:2ch;
     display: flex;
     align-items: center;
     position: relative;
-    justify-content: flex-start;
+    justify-content: flex-center;
     font-size: large;
 }
 
@@ -24,11 +24,9 @@ body {
 }
 
 .main-links{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 3ch;
+    margin: 0 auto;
 }
 
 .logo{
@@ -39,7 +37,8 @@ body {
 
 }
 a {
-    font-family: Text-Me-One, sans-serif;
+    font-size:1.2rem;
+    font-family: Text-Me-One;
 
 }
 .nav-logo {
@@ -71,3 +70,14 @@ a:hover {
     color: rgb(124, 118, 109);
     transition: 0.3s;
 }
+
+/* the media query is used for Ipad Pro on chrome*/
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1360px) and (max-height: 1370px) and (orientation: portrait) {
+
+.nav-link{
+    font-size:01rem;
+}
+.login-signup{
+   gap:2px;
+}
+    }

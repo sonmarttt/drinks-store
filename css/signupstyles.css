@@ -1,10 +1,12 @@
 body {
-    background-size: 800px auto; 
+    background-size: 900px auto; 
     background-position: left bottom; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
+    height: auto;
     transition: background-image 1s ease-in-out;
 }
+
 .container {
     padding-bottom: 40px;
 }
@@ -181,5 +183,11 @@ select.login-input option {
     color: white;
 }
 
+
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1360px) and (max-height: 1370px) and (orientation: portrait) {
+body{
+    background-size: 1000px auto; 
+}
+}
  
  

@@ -25,7 +25,7 @@ body::after {
   padding: 2rem 1rem;
   border-radius: 20px 0 0 20px;
   overflow-y: auto;
-  font-family: 'Text Me One', sans-serif;
+  font-family: 'Text Me One';
 }
 
 a:hover {
@@ -44,8 +44,7 @@ a:hover {
 .location-name {
   display: block;             
   max-height: 2em;            
-  overflow: hidden;            
-  text-overflow: ellipsis;    
+     
   white-space: normal;         
   line-height: 1.2em;  
 }
@@ -69,4 +68,20 @@ a:hover {
 .location-details:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(239, 183, 183, 0.3);
+}
+
+@media only screen and (min-width: 1020px) and (max-width: 1030px) and (min-height: 1360px) and (max-height: 1370px) and (orientation: portrait) {
+body{
+  height:100vh;
+}
+
+body::after{
+  height:140vh;
+}
+#location-list{
+width:40%;
+}
+#leaflet-map{
+  width:60%;
+}
 }
